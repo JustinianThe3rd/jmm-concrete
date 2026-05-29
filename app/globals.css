@@ -2,25 +2,76 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1c1c1c;
+  --primary: #1e3a5f;
+  --primary-light: #2c5282;
+  --accent: #c27706;
+  --accent-hover: #a86505;
+  --muted: #f7f6f4;
+  --muted-foreground: #44403c;
+  --border: #d6d3d1;
+  --card: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0c0a09;
+    --foreground: #f5f5f4;
+    --primary: #60a5fa;
+    --primary-light: #93bbfd;
+    --accent: #f59e0b;
+    --accent-hover: #d97706;
+    --muted: #1c1917;
+    --muted-foreground: #d6d3d1;
+    --border: #3a3634;
+    --card: #1c1917;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth section transitions */
+section + section {
+  border-top: 1px solid transparent;
+  box-shadow: 0 -1px 0 0 var(--border);
+}
+
+/* Utility for section spacing */
+.section-padding {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Smooth hover transitions globally */
+a,
+button {
+  transition: all 0.2s ease;
 }

@@ -6,9 +6,10 @@ export default function Hero() {
     >
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
+        className="absolute inset-0 bg-cover bg-no-repeat"
         style={{
           backgroundImage: "url('/images/download.png')",
+          backgroundPosition: "285% 285%",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black/85" />

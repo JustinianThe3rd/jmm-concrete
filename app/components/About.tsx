@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="about" className="section-padding bg-white dark:bg-card">
@@ -5,12 +7,17 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image Side */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80"
-                alt="Professional concrete work in progress"
-                className="w-full h-[400px] sm:h-[500px] object-cover"
-              />
+            <div className="rounded-2xl overflow-hidden shadow-2xl bg-stone-100 dark:bg-stone-800">
+              <div className="relative w-full aspect-[2/1]">
+                <Image
+                  src="/images/download (1).png"
+                  alt="Professional concrete work in progress"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
             {/* Floating Badge */}
             <div className="absolute -bottom-6 -right-4 sm:right-6 bg-accent text-white rounded-2xl p-5 shadow-xl">

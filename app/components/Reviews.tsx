@@ -1,18 +1,18 @@
 const reviews = [
   {
-    name: "Verified Customer",
+    name: "Angi Verified",
     rating: 5,
-    text: "Not only that, but he treated my neighbors with respect around the noise and equipment that was adjacent to their property. Would highly recommend Joe for concrete work.",
+    text: "Travis and team do great work! They are reliable, dedicated, detail oriented and provide above and beyond customer service. I would definitely recommend them.",
   },
   {
     name: "Verified Customer",
     rating: 5,
-    text: "Great price and excellent work.",
+    text: "Great group of people.",
   },
   {
     name: "Verified Customer",
     rating: 5,
-    text: "Great customer service and professional work!",
+    text: "Reasonably priced for quality work.",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function Reviews() {
               className="text-white font-black uppercase tracking-wider text-sm"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              4.5 out of 5 on Google
+              5.0 out of 5 on Google
             </span>
           </div>
         </div>

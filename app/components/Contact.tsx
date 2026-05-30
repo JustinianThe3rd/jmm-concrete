@@ -1,13 +1,13 @@
 "use client";
 
 const hours = [
-  { day: "Monday", time: "7 AM – 5:30 PM" },
-  { day: "Tuesday", time: "7 AM – 5:30 PM" },
-  { day: "Wednesday", time: "7 AM – 5:30 PM" },
-  { day: "Thursday", time: "7 AM – 5:30 PM" },
-  { day: "Friday", time: "7 AM – 5:30 PM" },
-  { day: "Saturday", time: "Closed" },
-  { day: "Sunday", time: "Closed" },
+  { day: "Monday", time: "Open 24 Hours" },
+  { day: "Tuesday", time: "Open 24 Hours" },
+  { day: "Wednesday", time: "Open 24 Hours" },
+  { day: "Thursday", time: "Open 24 Hours" },
+  { day: "Friday", time: "Open 24 Hours" },
+  { day: "Saturday", time: "Open 24 Hours" },
+  { day: "Sunday", time: "Open 24 Hours" },
 ];
 
 function getTodayIndex(): number {
@@ -37,8 +37,8 @@ export default function Contact() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Ready to start your project? Call us today or stop by — we&apos;d
-            love to discuss your vision.
+            Ready to start your project? Call us any time — we&apos;re open
+            24 hours and ready to discuss your vision.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="space-y-4">
             {/* Phone */}
             <a
-              href="tel:8563128923"
+              href="tel:8565344386"
               className="flex items-center gap-4 p-5 border-[3px] border-white/10 bg-[#141414] hover:border-[var(--accent)] hover:shadow-brutal hover:-translate-y-0.5 transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
@@ -57,13 +57,13 @@ export default function Contact() {
               </div>
               <div>
                 <div className="text-xs text-white/40 font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
-                  Call Us
+                  Call Us — 24/7
                 </div>
                 <div
                   className="text-xl font-black text-white group-hover:text-[var(--accent)] transition-colors"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  (856) 312-8923
+                  (856) 534-4386
                 </div>
               </div>
             </a>
@@ -84,7 +84,7 @@ export default function Contact() {
                   className="text-lg font-black text-white"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  106 Hillside Rd, Stratford, NJ 08084
+                  1904 Narberth Ave, Haddon Heights, NJ 08035
                 </div>
               </div>
             </div>
@@ -134,7 +134,7 @@ export default function Contact() {
 
             {/* CTA */}
             <a
-              href="tel:8563128923"
+              href="tel:8565344386"
               className="flex items-center justify-center gap-2 w-full py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider text-lg hover:bg-[var(--accent-hover)] transition-colors shadow-brutal-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
@@ -148,14 +148,14 @@ export default function Contact() {
           {/* Map */}
           <div className="border-[3px] border-white/10 shadow-brutal-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.5!2d-75.0183!3d39.8016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDQ4JzA1LjgiTiA3NcKwMDEnMDUuOSJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.5!2d-75.0783!3d39.8816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDUyJzUzLjgiTiA3NcKwMDQnNDEuOSJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: 460 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="JJM Concrete and Masonry location map"
+              title="SJ Concrete Pumping, LLC location map"
             />
           </div>
         </div>

@@ -17,25 +17,26 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "JJM Concrete & Masonry | Stratford, NJ | Driveways, Patios & More",
+  title: "SJ Concrete Pumping, LLC | Haddon Heights, NJ | Concrete Pumping & Construction",
   description:
-    "Stratford's premier concrete contractor. Driveways, patios, stamped concrete, foundations, walkways, and repairs. Licensed & insured. Free estimates — call (856) 312-8923!",
+    "SJ Concrete Pumping, LLC — Haddon Heights' trusted concrete pumping and construction contractor. Foundation pouring, basement deepening, concrete work, demolition, renovations & more. Open 24 hours. Call (856) 534-4386!",
   keywords: [
-    "concrete contractor",
-    "Stratford NJ",
-    "driveway",
-    "patio",
-    "stamped concrete",
-    "masonry",
-    "concrete repair",
-    "pool deck",
-    "sidewalk",
-    "foundation",
+    "concrete pumping",
+    "Haddon Heights NJ",
+    "foundation pouring",
+    "basement deepening",
+    "concrete construction",
+    "demolition",
+    "home renovations",
+    "foundation installation",
+    "slab foundation",
+    "concrete work",
+    "construction site excavation",
   ],
   openGraph: {
-    title: "JJM Concrete & Masonry | Stratford, NJ",
+    title: "SJ Concrete Pumping, LLC | Haddon Heights, NJ",
     description:
-      "Stratford's premier concrete contractor. Driveways, patios, stamped concrete & more. Free estimates.",
+      "Concrete pumping, foundation pouring, basement deepening & more. Serving Haddon Heights and surrounding areas. Open 24 hours.",
     type: "website",
     locale: "en_US",
   },

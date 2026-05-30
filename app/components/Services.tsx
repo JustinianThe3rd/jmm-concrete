@@ -1,43 +1,43 @@
 const services = [
   {
-    title: "Concrete Driveways",
+    title: "Concrete Pumping",
     description:
-      "Durable, expertly poured driveways built to withstand heavy use and New Jersey weather.",
+      "High-efficient concrete pumping for residential and commercial projects of any size.",
   },
   {
-    title: "Patios & Porches",
+    title: "Foundation Pouring",
     description:
-      "Beautiful outdoor living spaces customized to your style and home's architecture.",
+      "Precision foundation pouring for new construction, additions, and repairs.",
   },
   {
-    title: "Stamped & Stained",
+    title: "Basement Deepening",
     description:
-      "Decorative concrete that mimics stone, brick, or tile at a fraction of the cost.",
+      "Lower your basement floor and gain valuable living space with expert excavation and pouring.",
   },
   {
-    title: "Sidewalks & Walkways",
+    title: "Foundation Installation",
     description:
-      "Smooth, level, and safe walkways that enhance your property's curb appeal.",
+      "Complete foundation installation — slab, crawl space, and full basement foundations.",
   },
   {
-    title: "Foundations",
+    title: "Demolition",
     description:
-      "Solid concrete foundations for new construction, additions, and repairs.",
+      "Safe, controlled demolition of structures, slabs, and interior spaces.",
   },
   {
-    title: "Steps & Fireplaces",
+    title: "Site Excavation",
     description:
-      "Custom steps and stunning outdoor fireplaces that become the centerpiece of your yard.",
+      "Construction site excavation, grading, and dirt removal done right the first time.",
   },
   {
-    title: "Crack Repair",
+    title: "Home Renovations",
     description:
-      "Fix cracks, spalling, and damaged concrete — restore surfaces to like-new condition.",
+      "Remodeling, additions, and exterior structural repairs for your home.",
   },
   {
-    title: "Commercial Concrete",
+    title: "Concrete Work",
     description:
-      "Light commercial jobs, parking areas, and workspaces built to professional standards.",
+      "Sidewalks, walkways, driveways, slabs, and decorative concrete finishes.",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function Services() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            From driveways to decorative stamped concrete, we handle it all
+            From concrete pumping to basement deepening, we handle it all
             with precision and care. Residential and commercial — no job too
             big or small.
           </p>

@@ -11,7 +11,7 @@ export default function About() {
               <div className="relative w-full aspect-[2/1]">
                 <Image
                   src="/images/download (1).png"
-                  alt="Professional concrete work by JJM"
+                  alt="Professional concrete pumping work by SJ Concrete Pumping"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority
@@ -25,13 +25,13 @@ export default function About() {
                 className="text-5xl font-black leading-none"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                4.5
+                5.0
               </div>
               <div className="flex gap-0.5 mt-1">
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
-                    className={`w-4 h-4 ${i < 4 ? "text-[#0a0a0a]" : "text-[#0a0a0a]/30"}`}
+                    className="w-4 h-4 text-[#0a0a0a]"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -57,26 +57,28 @@ export default function About() {
               className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Why JJM?
+              Why SJ?
             </h2>
             <div className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6" />
             <p className="text-lg leading-relaxed text-white/50" style={{ fontFamily: "var(--font-body)" }}>
               <strong className="text-white">
-                JJM Concrete and Masonry
+                SJ Concrete Pumping, LLC
               </strong>{" "}
-              is Stratford&apos;s trusted local contractor, specializing in
-              transforming ordinary spaces into stunning hardscapes. From
-              residential driveways to commercial projects, we bring
-              craftsmanship, integrity, and attention to detail to every job.
+              is Haddon Heights&apos; trusted concrete pumping and construction
+              contractor. From foundation pouring to basement deepening, we bring
+              reliability, dedication, and attention to detail to every job.
+              Open 24 hours — ready when you are.
             </p>
 
             <div className="mt-8 space-y-4">
               {[
-                "Residential & Commercial Concrete",
+                "Concrete Pumping & Pouring",
+                "Foundation Installation & Repair",
+                "Basement Deepening & Lowering",
                 "Free Consultations & Estimates",
-                "Stamped, Stained & Decorative Concrete",
-                "Driveways, Patios, Sidewalks & More",
-                "Fully Licensed & Insured",
+                "Demolition & Site Excavation",
+                "Home Renovations & Repairs",
+                "Open 24 Hours",
               ].map((item, i) => (
                 <div key={item} className={`flex items-center gap-4 reveal delay-${i + 1}`}>
                   <div className="w-7 h-7 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
@@ -102,7 +104,7 @@ export default function About() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8563128923"
+                href="tel:8565344386"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
                 style={{ fontFamily: "var(--font-body)" }}
               >

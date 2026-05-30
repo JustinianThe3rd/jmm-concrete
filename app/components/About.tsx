@@ -2,16 +2,16 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-white dark:bg-card">
+    <section id="about" className="section-padding bg-[var(--surface)]">
       <div className="max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image Side */}
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden shadow-2xl bg-stone-100 dark:bg-stone-800">
+            <div className="border-[3px] border-[var(--border-brutal)] shadow-brutal-lg overflow-hidden bg-[var(--muted)]">
               <div className="relative w-full aspect-[2/1]">
                 <Image
                   src="/images/download (1).png"
-                  alt="Professional concrete work in progress"
+                  alt="Professional concrete work by JJM"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-contain"
@@ -20,13 +20,18 @@ export default function About() {
               </div>
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-4 sm:right-6 bg-accent text-white rounded-2xl p-5 shadow-xl">
-              <div className="text-4xl font-extrabold">4.5</div>
+            <div className="absolute -bottom-5 -right-2 sm:right-4 bg-[var(--accent)] text-[var(--primary)] p-4 shadow-brutal-lg border-[3px] border-[var(--border-brutal)]">
+              <div
+                className="text-4xl font-black leading-none"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
+                4.5
+              </div>
               <div className="flex gap-0.5 mt-1">
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
-                    className={`w-4 h-4 ${i < 4 ? "text-yellow-300" : "text-yellow-300/50"}`}
+                    className={`w-3.5 h-3.5 ${i < 4 ? "text-[var(--primary)]" : "text-[var(--primary)]/40"}`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -34,28 +39,35 @@ export default function About() {
                   </svg>
                 ))}
               </div>
-              <div className="text-sm mt-1 font-medium">Google Reviews</div>
+              <div className="text-[10px] font-bold uppercase tracking-wider mt-1" style={{ fontFamily: "var(--font-body)" }}>
+                Google Reviews
+              </div>
             </div>
           </div>
 
           {/* Text Side */}
           <div>
-            <span className="text-accent font-semibold uppercase tracking-widest text-sm">
+            <span
+              className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
               About Us
             </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-foreground dark:text-white leading-tight">
-              We Breathe Concrete —
-              <br />
-              It&apos;s All We Do.
+            <h2
+              className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-[var(--foreground)]"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Why JJM?
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-stone-600 dark:text-stone-300">
-              <strong className="text-foreground dark:text-white">
+            <div className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6" />
+            <p className="text-lg leading-relaxed text-[var(--foreground-secondary)]" style={{ fontFamily: "var(--font-body)" }}>
+              <strong className="text-[var(--foreground)]">
                 JJM Concrete and Masonry
               </strong>{" "}
-              is Stratford&apos;s trusted local contractor, specializing in transforming
-              ordinary spaces into stunning hardscapes. From residential driveways to
-              commercial projects, we bring craftsmanship, integrity, and attention to
-              detail to every job.
+              is Stratford&apos;s trusted local contractor, specializing in
+              transforming ordinary spaces into stunning hardscapes. From
+              residential driveways to commercial projects, we bring
+              craftsmanship, integrity, and attention to detail to every job.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -67,22 +79,21 @@ export default function About() {
                 "Fully Licensed & Insured",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <div className="w-6 h-6 bg-accent/15 rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-6 h-6 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
                     <svg
-                      className="w-4 h-4 text-accent"
+                      className="w-4 h-4 text-[var(--primary)]"
                       fill="none"
                       stroke="currentColor"
+                      strokeWidth={3}
                       viewBox="0 0 24 24"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
+                      <path strokeLinecap="square" d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <span className="text-foreground dark:text-white font-medium">
+                  <span
+                    className="text-[var(--foreground)] font-medium uppercase tracking-wide text-sm"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
                     {item}
                   </span>
                 </div>
@@ -92,7 +103,8 @@ export default function About() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:8563128923"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-primary text-white font-bold rounded-xl hover:bg-primary-light shadow-lg shadow-primary/15"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors shadow-brutal"
+                style={{ fontFamily: "var(--font-body)" }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -101,9 +113,10 @@ export default function About() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-stone-100 dark:bg-stone-800 text-foreground dark:text-white font-bold rounded-xl hover:bg-stone-200 dark:hover:bg-stone-700 border border-border"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-[var(--foreground)] font-bold uppercase tracking-wider border-[3px] border-[var(--border-brutal)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
+                style={{ fontFamily: "var(--font-body)" }}
               >
-                Get Free Estimate
+                Free Estimate
               </a>
             </div>
           </div>

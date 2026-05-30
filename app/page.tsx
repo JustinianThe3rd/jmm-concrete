@@ -6,6 +6,7 @@ import Gallery from "./components/Gallery";
 import Reviews from "./components/Reviews";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import StickyMobileCTA from "./components/StickyMobileCTA";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 }

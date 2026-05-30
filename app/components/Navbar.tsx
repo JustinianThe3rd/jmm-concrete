@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -12,33 +12,43 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border shadow-sm dark:bg-background/90">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[var(--primary)] border-b-[3px] border-[var(--accent)]"
+          : "bg-transparent border-b-[3px] border-transparent"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-            <svg
-              className="w-6 h-6 text-white"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-              />
-            </svg>
-          </div>
-          <div className="leading-tight">
-            <span className="block text-lg font-bold text-primary dark:text-white leading-none">
-              JJM
+        <a href="#" className="flex items-center gap-2 group">
+          <span
+            className="text-2xl sm:text-3xl font-black uppercase tracking-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            JJM
+          </span>
+          <div className="leading-none hidden sm:block">
+            <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
+              Concrete
             </span>
-            <span className="block text-[10px] font-medium text-muted-foreground uppercase tracking-widest">
-              Concrete &amp; Masonry
+            <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--muted-foreground)]">
+              & Masonry
             </span>
           </div>
         </a>
@@ -49,14 +59,16 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="px-3 py-2 text-sm font-medium text-foreground/80 hover:text-primary dark:hover:text-accent rounded-md transition-colors"
+              className="px-3 py-2 text-sm font-medium uppercase tracking-wider text-white/80 hover:text-[var(--accent)] transition-colors"
+              style={{ fontFamily: "var(--font-body)" }}
             >
               {link.label}
             </a>
           ))}
           <a
             href="tel:8563128923"
-            className="ml-3 inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white text-sm font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-md"
+            className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--accent)] text-[var(--primary)] text-sm font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors"
+            style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -68,44 +80,52 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-md text-foreground/80 hover:text-primary"
+          className="md:hidden p-2 text-white hover:text-[var(--accent)] transition-colors"
           aria-label="Toggle menu"
+          aria-expanded={open}
         >
           {open ? (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+              <path strokeLinecap="square" d="M6 6l12 12M6 18L18 6" />
             </svg>
           ) : (
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+              <path strokeLinecap="square" d="M3 7h18M3 12h18M3 17h18" />
             </svg>
           )}
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav Overlay */}
       {open && (
-        <nav className="md:hidden border-t border-border bg-white dark:bg-background px-4 pb-4">
-          {navLinks.map((link) => (
+        <div className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[var(--primary)] z-40 flex flex-col">
+          <nav className="flex flex-col items-center justify-center flex-1 gap-2 px-6">
+            {navLinks.map((link, i) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block w-full text-center py-4 text-2xl font-black uppercase tracking-wider text-white hover:text-[var(--accent)] border-b border-white/10 transition-colors animate-fade-up"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  animationDelay: `${i * 0.05}s`,
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
             <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="block px-3 py-3 text-sm font-medium text-foreground/80 hover:text-primary dark:hover:text-accent border-b border-border/50 last:border-0"
+              href="tel:8563128923"
+              className="mt-6 inline-flex items-center justify-center gap-3 w-full py-4 bg-[var(--accent)] text-[var(--primary)] text-lg font-bold uppercase tracking-wider"
+              style={{ fontFamily: "var(--font-body)" }}
             >
-              {link.label}
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              Call (856) 312-8923
             </a>
-          ))}
-          <a
-            href="tel:8563128923"
-            className="mt-3 flex items-center justify-center gap-2 px-5 py-3 bg-accent text-white text-sm font-semibold rounded-lg"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            Call (856) 312-8923
-          </a>
-        </nav>
+          </nav>
+        </div>
       )}
     </header>
   );

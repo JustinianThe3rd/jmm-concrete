@@ -11,8 +11,7 @@ const hours = [
 ];
 
 function getTodayIndex(): number {
-  const day = new Date().getDay(); // 0=Sun … 6=Sat
-  // Map to our array: Mon=0 … Sun=6
+  const day = new Date().getDay();
   return day === 0 ? 6 : day - 1;
 }
 
@@ -20,121 +19,134 @@ export default function Contact() {
   const todayIndex = getTodayIndex();
 
   return (
-    <section id="contact" className="section-padding bg-white dark:bg-card">
+    <section id="contact" className="section-padding bg-[var(--background)]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-accent font-semibold uppercase tracking-widest text-sm">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span
+            className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
             Get In Touch
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-foreground dark:text-white">
-            Free Estimate &amp; Consultation
+          <h2
+            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-[var(--foreground)]"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Contact Us
           </h2>
-          <p className="mt-4 text-muted-foreground text-lg">
-            Ready to start your project? Call us today or stop by — we&apos;d love to
-            discuss your vision.
+          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5" />
+          <p className="mt-5 text-[var(--muted-foreground)] text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+            Ready to start your project? Call us today or stop by — we&apos;d
+            love to discuss your vision.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
-          {/* Contact Info Cards */}
-          <div className="space-y-5">
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* Contact Info */}
+          <div className="space-y-4">
             {/* Phone */}
             <a
               href="tel:8563128923"
-              className="flex items-center gap-4 p-5 bg-stone-50 dark:bg-stone-900/50 rounded-xl border border-border hover:border-primary/30 group transition-colors"
+              className="flex items-center gap-4 p-5 border-[3px] border-[var(--border-brutal)] bg-[var(--surface)] hover:border-[var(--accent)] hover:shadow-brutal transition-all duration-300 group"
             >
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-primary-light transition-colors">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="w-12 h-12 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-[var(--primary)]" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
               </div>
               <div>
-                <div className="text-sm text-muted-foreground font-medium">
+                <div className="text-xs text-[var(--muted-foreground)] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                   Call Us
                 </div>
-                <div className="text-xl font-bold text-foreground dark:text-white">
+                <div
+                  className="text-xl font-black text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   (856) 312-8923
                 </div>
               </div>
             </a>
 
             {/* Address */}
-            <div className="flex items-center gap-4 p-5 bg-stone-50 dark:bg-stone-900/50 rounded-xl border border-border">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            <div className="flex items-center gap-4 p-5 border-[3px] border-[var(--border-brutal)] bg-[var(--surface)]">
+              <div className="w-12 h-12 bg-[var(--foreground)] flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                  <path strokeLinecap="square" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="square" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
               <div>
-                <div className="text-sm text-muted-foreground font-medium">
+                <div className="text-xs text-[var(--muted-foreground)] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                   Location
                 </div>
-                <div className="text-lg font-bold text-foreground dark:text-white">
+                <div
+                  className="text-lg font-black text-[var(--foreground)]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
                   106 Hillside Rd, Stratford, NJ 08084
                 </div>
               </div>
             </div>
 
             {/* Hours */}
-            <div className="p-5 bg-stone-50 dark:bg-stone-900/50 rounded-xl border border-border">
+            <div className="p-5 border-[3px] border-[var(--border-brutal)] bg-[var(--surface)]">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <div className="w-12 h-12 bg-[var(--foreground)] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="square" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-sm text-muted-foreground font-medium">
+                  <div className="text-xs text-[var(--muted-foreground)] font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                     Business Hours
                   </div>
-                  <div className="text-xs text-muted-foreground/70">
+                  <div className="text-xs text-[var(--muted-foreground)]" style={{ fontFamily: "var(--font-body)" }}>
                     Today: {hours[todayIndex].time}
                   </div>
                 </div>
               </div>
-              <div className="space-y-1.5">
+              <div className="space-y-1">
                 {hours.map((entry, i) => {
                   const isToday = i === todayIndex;
                   return (
                     <div
                       key={entry.day}
-                      className={`flex items-center justify-between rounded-lg px-3 py-2 text-sm transition-colors ${
+                      className={`flex items-center justify-between px-3 py-2 text-sm transition-colors ${
                         isToday
-                          ? "bg-primary/10 dark:bg-accent/15 font-semibold text-primary dark:text-accent"
-                          : "text-foreground dark:text-white"
+                          ? "bg-[var(--accent)] text-[var(--primary)]"
+                          : "text-[var(--foreground)]"
                       }`}
+                      style={{ fontFamily: "var(--font-body)" }}
                     >
-                      <span className="flex items-center gap-2">
+                      <span className="flex items-center gap-2 font-medium uppercase tracking-wide text-xs">
                         {isToday && (
-                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" />
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
                         )}
                         {entry.day}
                       </span>
-                        {entry.time}
+                      <span className={isToday ? "font-bold" : ""}>{entry.time}</span>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            {/* Call to Action */}
-            <div className="pt-2">
-              <a
-                href="tel:8563128923"
-                className="flex items-center justify-center gap-2 w-full py-4 bg-accent text-white font-bold rounded-xl hover:bg-accent-hover shadow-lg shadow-accent/20 text-lg"
-              >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                </svg>
-                Call Now — Free Estimates
-              </a>
-            </div>
+            {/* CTA */}
+            <a
+              href="tel:8563128923"
+              className="flex items-center justify-center gap-2 w-full py-4 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider text-lg hover:bg-[var(--accent-hover)] transition-colors shadow-brutal-lg"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              Call Now — Free Estimates
+            </a>
           </div>
 
           {/* Map */}
-          <div className="rounded-2xl overflow-hidden border border-border shadow-lg">
+          <div className="border-[3px] border-[var(--border-brutal)] shadow-brutal-lg overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.5!2d-75.0183!3d39.8016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDQ4JzA1LjgiTiA3NcKwMDEnMDUuOSJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="100%"

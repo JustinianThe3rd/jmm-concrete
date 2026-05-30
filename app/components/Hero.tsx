@@ -2,7 +2,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative min-h-dvh flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
       <div
@@ -12,18 +12,18 @@ export default function Hero() {
           backgroundPosition: "285% 285%",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 pb-12">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 mb-8 animate-fade-up">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
               <svg
                 key={i}
-                className={`w-4 h-4 ${i < 4 ? "text-yellow-400" : "text-yellow-400/50"}`}
+                className={`w-4 h-4 ${i < 4 ? "text-[var(--accent)]" : "text-[var(--accent)]/40"}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -31,32 +31,42 @@ export default function Hero() {
               </svg>
             ))}
           </div>
-          <span className="text-white text-sm font-medium">
+          <span className="text-white text-sm font-medium uppercase tracking-wider">
             4.5 Stars — 15+ Happy Customers
           </span>
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight drop-shadow-lg">
-          Stratford&apos;s Premier
+        <h1
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-white animate-fade-up stagger-1"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          Stratford&apos;s
           <br />
-          <span className="text-amber-400 drop-shadow-md">Concrete &amp; Masonry</span>
+          <span className="text-[var(--accent)]">Premier</span>
           <br />
-          Contractor
+          Concrete &amp; Masonry
         </h1>
 
+        {/* Gold accent bar */}
+        <div className="w-24 h-1 bg-[var(--accent)] mx-auto mt-6 mb-6 animate-fade-up stagger-2" />
+
         {/* Subheading */}
-        <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
-          Driveways, patios, stamped concrete, foundations &amp; more. Residential
-          and commercial — built to last. Serving Stratford, NJ &amp;
-          surrounding areas.
+        <p
+          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed animate-fade-up stagger-3"
+          style={{ fontFamily: "var(--font-body)" }}
+        >
+          Driveways, patios, stamped concrete, foundations &amp; more.
+          Residential and commercial — built to last. Serving Stratford, NJ
+          &amp; surrounding areas.
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up stagger-4">
           <a
             href="tel:8563128923"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-white text-lg font-bold rounded-xl hover:bg-accent-hover shadow-xl shadow-black/20 hover:shadow-black/30 hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--primary)] text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors shadow-brutal-lg"
+            style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -65,24 +75,31 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-white/15 backdrop-blur-sm text-white text-lg font-bold rounded-xl border border-white/30 hover:bg-white/25"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white text-lg font-bold uppercase tracking-wider border-[3px] border-white/40 hover:border-white hover:bg-white/10 transition-colors"
+            style={{ fontFamily: "var(--font-body)" }}
           >
-            Get Free Estimate
+            Free Estimate
           </a>
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+        <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-fade-up stagger-5">
           {[
             { value: "15+", label: "5-Star Reviews" },
             { value: "100%", label: "Satisfaction" },
             { value: "Free", label: "Estimates" },
           ].map((stat) => (
-            <div key={stat.label}>
-              <div className="text-3xl sm:text-4xl font-extrabold text-white drop-shadow-sm">
+            <div key={stat.label} className="text-center">
+              <div
+                className="text-3xl sm:text-4xl font-black text-white uppercase"
+                style={{ fontFamily: "var(--font-display)" }}
+              >
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm text-white/70 mt-1 font-medium">
+              <div
+                className="text-xs sm:text-sm text-white/60 mt-1 font-medium uppercase tracking-wider"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
                 {stat.label}
               </div>
             </div>
@@ -93,17 +110,13 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-white/60"
+          className="w-6 h-6 text-white/50"
           fill="none"
           stroke="currentColor"
+          strokeWidth={3}
           viewBox="0 0 24 24"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
+          <path strokeLinecap="square" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </div>
     </section>

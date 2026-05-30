@@ -30,7 +30,7 @@ export default function Reviews() {
     <section id="reviews" className="section-padding bg-[var(--accent-light)] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
           <span
             className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
             style={{ fontFamily: "var(--font-body)" }}
@@ -43,7 +43,7 @@ export default function Reviews() {
           >
             What Customers Say
           </h2>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5" />
+          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-[var(--muted-foreground)] text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Don&apos;t just take our word for it — hear from homeowners and
             businesses we&apos;ve worked with.
@@ -60,9 +60,9 @@ export default function Reviews() {
         {allReviews.map((review, index) => (
           <div
             key={index}
-            className="flex-shrink-0 snap-center w-[85vw] sm:w-[70vw] md:w-[45vw] lg:w-[32vw]"
+            className="flex-shrink-0 snap-center w-[85vw] sm:w-[70vw] md:w-[45vw] lg:w-[32vw] reveal-scale"
           >
-            <div className="border-[3px] border-[var(--border-brutal)] bg-[var(--surface)] p-6 h-full flex flex-col shadow-brutal">
+            <div className="border-[3px] border-[var(--border-brutal)] bg-[var(--surface)] p-6 h-full flex flex-col shadow-brutal transition-transform duration-300 hover:-translate-y-1">
               {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (

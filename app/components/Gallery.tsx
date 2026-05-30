@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const galleryItems = [
   { src: "/images/download (2).png", label: "Stamped Concrete Patio" },
@@ -13,13 +13,50 @@ const galleryItems = [
 ];
 
 export default function Gallery() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-scroll with requestAnimationFrame for buttery smoothness
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let animationId: number;
+    let speed = 0.8; // pixels per frame — smooth and readable
+
+    const step = () => {
+      if (!isPaused && track) {
+        track.scrollLeft += speed;
+
+        // When we've scrolled through the first set, reset seamlessly
+        const halfWidth = track.scrollWidth / 3;
+        if (track.scrollLeft >= halfWidth * 2) {
+          track.scrollLeft = halfWidth;
+        }
+      }
+      animationId = requestAnimationFrame(step);
+    };
+
+    animationId = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(animationId);
+  }, [isPaused]);
+
+  // Pause on touch/click
+  const handlePointerDown = () => setIsPaused(true);
+  const handlePointerUp = () => setIsPaused(false);
+  const handlePointerLeave = () => setIsPaused(false);
+
+  // Triple the items for seamless loop
+  const looped = [...galleryItems, ...galleryItems, ...galleryItems];
 
   return (
-    <section id="gallery" className="section-padding bg-[var(--primary)] overflow-hidden">
+    <section
+      id="gallery"
+      className="section-padding bg-[var(--primary)] overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
           <span
             className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
             style={{ fontFamily: "var(--font-body)" }}
@@ -32,7 +69,7 @@ export default function Gallery() {
           >
             Project Gallery
           </h2>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5" />
+          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Browse some of our recent concrete and masonry projects.
             Every job completed with care and precision.
@@ -40,61 +77,71 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Auto-scrolling carousel */}
-      <div
-        ref={scrollRef}
-        className="flex gap-4 overflow-x-auto carousel-touch pb-4 px-4 snap-x snap-mandatory md:snap-none"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" as unknown as undefined }}
-      >
-        {/* Double the items for infinite scroll illusion */}
-        {[...galleryItems, ...galleryItems, ...galleryItems].map((item, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 snap-center w-[85vw] sm:w-[70vw] md:w-[45vw] lg:w-[32vw]"
-          >
-            <div className="relative border-[3px] border-white/20 hover:border-[var(--accent)] transition-colors duration-300 bg-[var(--primary-light)] group">
-              <div className="relative w-full aspect-[2/1]">
-                <Image
-                  src={item.src}
-                  alt={item.label}
-                  fill
-                  sizes="(min-width: 1024px) 32vw, (min-width: 768px) 45vw, (min-width: 640px) 70vw, 85vw"
-                  className="object-contain"
-                />
-              </div>
-              {/* Label overlay */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4 pt-12">
-                <span
-                  className="text-white font-black uppercase text-sm sm:text-base tracking-wider"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  {item.label}
-                </span>
+      {/* Auto-scrolling track */}
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div
+          ref={trackRef}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerLeave={handlePointerLeave}
+          onTouchStart={handlePointerDown}
+          onTouchEnd={handlePointerUp}
+          className="flex gap-4 overflow-x-auto cursor-grab active:cursor-grabbing select-none"
+          style={{
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
+          {looped.map((item, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw]"
+            >
+              <div className="relative border-[3px] border-white/20 hover:border-[var(--accent)] transition-all duration-500 bg-[var(--primary-light)] group overflow-hidden">
+                {/* Image container — offset parent for fill */}
+                <div className="relative w-full aspect-[2/1] overflow-hidden">
+                  <Image
+                    src={item.src}
+                    alt={item.label}
+                    fill
+                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, (min-width: 640px) 60vw, 80vw"
+                    className="object-cover object-center transition-transform duration-700 var(--ease-out-expo) group-hover:scale-105"
+                    style={{ objectPosition: "50% 50%" }}
+                    draggable={false}
+                  />
+                </div>
+                {/* Label overlay */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 pt-10">
+                  <span
+                    className="text-white font-black uppercase text-sm sm:text-base tracking-wider"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {item.label}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      {/* Scroll hint on mobile */}
-      <div className="text-center mt-6 md:hidden">
+      {/* Controls row */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex items-center justify-between">
         <span
-          className="text-white/40 text-xs font-medium uppercase tracking-widest"
+          className="text-white/30 text-xs font-medium uppercase tracking-widest"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          ← Swipe to explore →
+          {isPaused ? "▶ Tap to resume" : "Pause to explore →"}
         </span>
-      </div>
-
-      {/* Desktop: scroll indicator dots */}
-      <div className="hidden md:flex justify-center gap-2 mt-8">
-        {galleryItems.map((_, i) => (
-          <div
-            key={i}
-            className="w-2 h-2 bg-white/30"
-            style={{ fontFamily: "var(--font-body)" }}
-          />
-        ))}
+        <div className="flex gap-1.5">
+          {galleryItems.map((_, i) => (
+            <div
+              key={i}
+              className="w-1.5 h-1.5 bg-white/20 rounded-full"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

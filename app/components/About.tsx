@@ -6,16 +6,17 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image Side */}
-          <div className="relative">
+          <div className="relative reveal-left">
             <div className="border-[3px] border-[var(--border-brutal)] shadow-brutal-lg overflow-hidden bg-[var(--muted)]">
-              <div className="relative w-full aspect-[2/1]">
+              <div className="relative w-full aspect-[2/1]" style={{ overflow: "hidden" }}>
                 <Image
                   src="/images/download (1).png"
                   alt="Professional concrete work by JJM"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-contain"
+                  className="object-cover object-center"
                   priority
+                  style={{ objectPosition: "50% 50%", objectFit: "cover" }}
                 />
               </div>
             </div>
@@ -46,7 +47,7 @@ export default function About() {
           </div>
 
           {/* Text Side */}
-          <div>
+          <div className="reveal-right">
             <span
               className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
               style={{ fontFamily: "var(--font-body)" }}
@@ -77,8 +78,8 @@ export default function About() {
                 "Stamped, Stained & Decorative Concrete",
                 "Driveways, Patios, Sidewalks & More",
                 "Fully Licensed & Insured",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-3">
+              ].map((item, i) => (
+                <div key={item} className={`flex items-center gap-3 reveal delay-${i + 1}`}>
                   <div className="w-6 h-6 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-4 h-4 text-[var(--primary)]"
@@ -103,7 +104,7 @@ export default function About() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:8563128923"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors shadow-brutal"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal hover:-translate-y-0.5"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -113,7 +114,7 @@ export default function About() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-[var(--foreground)] font-bold uppercase tracking-wider border-[3px] border-[var(--border-brutal)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-[var(--foreground)] font-bold uppercase tracking-wider border-[3px] border-[var(--border-brutal)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-all duration-300"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Free Estimate

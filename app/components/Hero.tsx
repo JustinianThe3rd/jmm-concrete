@@ -18,7 +18,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 pb-12">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 mb-8 animate-fade-up">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 mb-8 animate-hero-up hero-stagger-1">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
               <svg
@@ -38,7 +38,7 @@ export default function Hero() {
 
         {/* Heading */}
         <h1
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-white animate-fade-up stagger-1"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-white animate-hero-up hero-stagger-2"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Stratford&apos;s
@@ -48,12 +48,12 @@ export default function Hero() {
           Concrete &amp; Masonry
         </h1>
 
-        {/* Gold accent bar */}
-        <div className="w-24 h-1 bg-[var(--accent)] mx-auto mt-6 mb-6 animate-fade-up stagger-2" />
+        {/* Gold accent bar — animated width draw */}
+        <div className="mx-auto mt-6 mb-6 h-1 bg-[var(--accent)] animate-hero-line" />
 
         {/* Subheading */}
         <p
-          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed animate-fade-up stagger-3"
+          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed animate-hero-up hero-stagger-3"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Driveways, patios, stamped concrete, foundations &amp; more.
@@ -62,10 +62,10 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up stagger-4">
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-hero-up hero-stagger-4">
           <a
             href="tel:8563128923"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--primary)] text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors shadow-brutal-lg"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--primary)] text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.4)]"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -75,7 +75,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white text-lg font-bold uppercase tracking-wider border-[3px] border-white/40 hover:border-white hover:bg-white/10 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white text-lg font-bold uppercase tracking-wider border-[3px] border-white/40 hover:border-white hover:bg-white/10 transition-all duration-300"
             style={{ fontFamily: "var(--font-body)" }}
           >
             Free Estimate
@@ -83,13 +83,17 @@ export default function Hero() {
         </div>
 
         {/* Quick Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-fade-up stagger-5">
+        <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-hero-up hero-stagger-4">
           {[
             { value: "15+", label: "5-Star Reviews" },
             { value: "100%", label: "Satisfaction" },
             { value: "Free", label: "Estimates" },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center">
+          ].map((stat, i) => (
+            <div
+              key={stat.label}
+              className="text-center animate-hero-up"
+              style={{ animationDelay: `${0.7 + i * 0.1}s` }}
+            >
               <div
                 className="text-3xl sm:text-4xl font-black text-white uppercase"
                 style={{ fontFamily: "var(--font-display)" }}

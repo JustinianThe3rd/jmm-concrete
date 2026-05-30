@@ -22,7 +22,7 @@ export default function Contact() {
     <section id="contact" className="section-padding bg-[var(--background)]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
           <span
             className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
             style={{ fontFamily: "var(--font-body)" }}
@@ -35,7 +35,7 @@ export default function Contact() {
           >
             Contact Us
           </h2>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5" />
+          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-[var(--muted-foreground)] text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Ready to start your project? Call us today or stop by — we&apos;d
             love to discuss your vision.
@@ -48,7 +48,7 @@ export default function Contact() {
             {/* Phone */}
             <a
               href="tel:8563128923"
-              className="flex items-center gap-4 p-5 border-[3px] border-[var(--border-brutal)] bg-[var(--surface)] hover:border-[var(--accent)] hover:shadow-brutal transition-all duration-300 group"
+              className="flex items-center gap-4 p-5 border-[3px] border-[var(--border-brutal)] bg-[var(--surface)] hover:border-[var(--accent)] hover:shadow-brutal hover:-translate-y-0.5 transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
                 <svg className="w-6 h-6 text-[var(--primary)]" fill="currentColor" viewBox="0 0 20 20">

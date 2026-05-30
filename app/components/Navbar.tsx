@@ -30,7 +30,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[var(--primary)] border-b-[3px] border-[var(--accent)]"
+          ? "bg-[#0a0a0a] border-b-[3px] border-[var(--accent)]"
           : "bg-transparent border-b-[3px] border-transparent"
       }`}
     >
@@ -67,7 +67,7 @@ export default function Navbar() {
           ))}
           <a
             href="tel:8563128923"
-            className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--accent)] text-[var(--primary)] text-sm font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors"
+            className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--accent)] text-[#0a0a0a] text-sm font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
@@ -98,7 +98,7 @@ export default function Navbar() {
 
       {/* Mobile Nav Overlay */}
       {open && (
-        <div className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[var(--primary)] z-40 flex flex-col">
+        <div className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[#0a0a0a] z-40 flex flex-col">
           <nav className="flex flex-col items-center justify-center flex-1 gap-2 px-6">
             {navLinks.map((link, i) => (
               <a
@@ -116,7 +116,7 @@ export default function Navbar() {
             ))}
             <a
               href="tel:8563128923"
-              className="mt-6 inline-flex items-center justify-center gap-3 w-full py-4 bg-[var(--accent)] text-[var(--primary)] text-lg font-bold uppercase tracking-wider"
+              className="mt-6 inline-flex items-center justify-center gap-3 w-full py-4 bg-[var(--accent)] text-[#0a0a0a] text-lg font-bold uppercase tracking-wider"
               style={{ fontFamily: "var(--font-body)" }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">

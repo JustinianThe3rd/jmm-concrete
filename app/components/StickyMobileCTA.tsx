@@ -1,12 +1,32 @@
 "use client";
 
+import { useState, useEffect } from "react";
+
 export default function StickyMobileCTA() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    let lastScroll = window.scrollY;
+    const onScroll = () => {
+      const current = window.scrollY;
+      // Hide on scroll down, show on scroll up
+      setVisible(current < lastScroll || current < 80);
+      lastScroll = current;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden">
+    <div
+      className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-transform duration-300 ${
+        visible ? "translate-y-0" : "translate-y-full"
+      }`}
+    >
       <div className="flex">
         <a
           href="tel:8563128923"
-          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider text-sm"
+          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider text-sm"
           style={{ fontFamily: "var(--font-body)" }}
         >
           <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -16,7 +36,7 @@ export default function StickyMobileCTA() {
         </a>
         <a
           href="#contact"
-          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[var(--primary)] text-white font-bold uppercase tracking-wider text-sm border-t-4 border-[var(--accent)]"
+          className="flex-1 flex items-center justify-center gap-2 py-4 bg-[#0a0a0a] text-white font-bold uppercase tracking-wider text-sm border-t-4 border-[var(--accent)]"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Free Estimate

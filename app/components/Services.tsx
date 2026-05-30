@@ -43,7 +43,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="section-padding bg-[var(--background)]">
+    <section id="services" className="section-padding bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14 reveal">
@@ -54,13 +54,13 @@ export default function Services() {
             What We Do
           </span>
           <h2
-            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-[var(--foreground)]"
+            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Our Services
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
-          <p className="mt-5 text-[var(--muted-foreground)] text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+          <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             From driveways to decorative stamped concrete, we handle it all
             with precision and care. Residential and commercial — no job too
             big or small.
@@ -72,16 +72,16 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`group border-[3px] border-[var(--border-brutal)] bg-[var(--surface)] p-6 hover:border-[var(--accent)] hover:shadow-brutal hover:-translate-y-1 transition-all duration-300 cursor-default reveal delay-${Math.min(i + 1, 6)}`}
+              className={`group border-2 border-white/10 bg-[#141414] p-6 hover:border-[var(--accent)] hover:bg-[#1a1a1a] transition-all duration-500 cursor-default reveal delay-${Math.min(i + 1, 6)}`}
             >
               <h3
-                className="text-lg font-black uppercase text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors leading-tight"
+                className="text-lg font-black uppercase text-white group-hover:text-[var(--accent)] transition-colors duration-300 leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {service.title}
               </h3>
-              <div className="w-8 h-0.5 bg-[var(--accent)] mb-3 mt-2" />
-              <p className="text-[var(--muted-foreground)] leading-relaxed text-sm" style={{ fontFamily: "var(--font-body)" }}>
+              <div className="w-8 h-0.5 bg-[var(--accent)] mb-3 mt-3 group-hover:w-16 transition-all duration-500" />
+              <p className="text-white/40 leading-relaxed text-sm group-hover:text-white/60 transition-colors duration-300" style={{ fontFamily: "var(--font-body)" }}>
                 {service.description}
               </p>
             </div>
@@ -89,10 +89,10 @@ export default function Services() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-14">
+        <div className="text-center mt-14 reveal">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg text-lg hover:-translate-y-0.5"
+            className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 text-lg hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
             style={{ fontFamily: "var(--font-body)" }}
           >
             Request a Free Estimate

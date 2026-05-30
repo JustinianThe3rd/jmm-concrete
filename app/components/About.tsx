@@ -2,28 +2,27 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="section-padding bg-[var(--surface)]">
+    <section id="about" className="section-padding bg-[#0f0f0f]">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image Side */}
           <div className="relative reveal-left">
-            <div className="border-[3px] border-[var(--border-brutal)] shadow-brutal-lg overflow-hidden bg-[var(--muted)]">
-              <div className="relative w-full aspect-[2/1]" style={{ overflow: "hidden" }}>
+            <div className="border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)] overflow-hidden bg-[#141414]">
+              <div className="relative w-full aspect-[2/1]">
                 <Image
                   src="/images/download (1).png"
                   alt="Professional concrete work by JJM"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover object-center"
                   priority
-                  style={{ objectPosition: "50% 50%", objectFit: "cover" }}
+                  style={{ objectFit: "cover", objectPosition: "50% 50%" }}
                 />
               </div>
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-5 -right-2 sm:right-4 bg-[var(--accent)] text-[var(--primary)] p-4 shadow-brutal-lg border-[3px] border-[var(--border-brutal)]">
+            <div className="absolute -bottom-5 -right-2 sm:right-6 bg-[var(--accent)] text-[#0a0a0a] p-5 border-2 border-[var(--accent-hover)]">
               <div
-                className="text-4xl font-black leading-none"
+                className="text-5xl font-black leading-none"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 4.5
@@ -32,7 +31,7 @@ export default function About() {
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
-                    className={`w-3.5 h-3.5 ${i < 4 ? "text-[var(--primary)]" : "text-[var(--primary)]/40"}`}
+                    className={`w-4 h-4 ${i < 4 ? "text-[#0a0a0a]" : "text-[#0a0a0a]/30"}`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -55,14 +54,14 @@ export default function About() {
               About Us
             </span>
             <h2
-              className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-[var(--foreground)]"
+              className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
               Why JJM?
             </h2>
             <div className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6" />
-            <p className="text-lg leading-relaxed text-[var(--foreground-secondary)]" style={{ fontFamily: "var(--font-body)" }}>
-              <strong className="text-[var(--foreground)]">
+            <p className="text-lg leading-relaxed text-white/50" style={{ fontFamily: "var(--font-body)" }}>
+              <strong className="text-white">
                 JJM Concrete and Masonry
               </strong>{" "}
               is Stratford&apos;s trusted local contractor, specializing in
@@ -79,10 +78,10 @@ export default function About() {
                 "Driveways, Patios, Sidewalks & More",
                 "Fully Licensed & Insured",
               ].map((item, i) => (
-                <div key={item} className={`flex items-center gap-3 reveal delay-${i + 1}`}>
-                  <div className="w-6 h-6 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
+                <div key={item} className={`flex items-center gap-4 reveal delay-${i + 1}`}>
+                  <div className="w-7 h-7 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
                     <svg
-                      className="w-4 h-4 text-[var(--primary)]"
+                      className="w-4 h-4 text-[#0a0a0a]"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={3}
@@ -92,7 +91,7 @@ export default function About() {
                     </svg>
                   </div>
                   <span
-                    className="text-[var(--foreground)] font-medium uppercase tracking-wide text-sm"
+                    className="text-white font-medium uppercase tracking-wide text-sm"
                     style={{ fontFamily: "var(--font-body)" }}
                   >
                     {item}
@@ -104,7 +103,7 @@ export default function About() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
                 href="tel:8563128923"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[var(--accent)] text-[var(--primary)] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -114,7 +113,7 @@ export default function About() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-transparent text-[var(--foreground)] font-bold uppercase tracking-wider border-[3px] border-[var(--border-brutal)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-transparent text-white font-bold uppercase tracking-wider border-2 border-white/20 hover:border-white hover:bg-white hover:text-[#0a0a0a] transition-all duration-300"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 Free Estimate

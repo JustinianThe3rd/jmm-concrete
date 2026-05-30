@@ -2,23 +2,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-dvh flex items-center justify-center overflow-hidden"
+      className="relative min-h-dvh flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: "url('/images/download.png')",
-          backgroundPosition: "285% 285%",
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90" />
-      </div>
+      {/* Subtle texture overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,76,0.06)_0%,_transparent_70%)]" />
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 pb-12">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 mb-8 animate-hero-up hero-stagger-1">
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 mb-8 animate-hero-up hero-stagger-1">
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
               <svg
@@ -31,7 +23,7 @@ export default function Hero() {
               </svg>
             ))}
           </div>
-          <span className="text-white text-sm font-medium uppercase tracking-wider">
+          <span className="text-white/80 text-sm font-medium uppercase tracking-wider">
             4.5 Stars — 15+ Happy Customers
           </span>
         </div>
@@ -53,7 +45,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <p
-          className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed animate-hero-up hero-stagger-3"
+          className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed animate-hero-up hero-stagger-3"
           style={{ fontFamily: "var(--font-body)" }}
         >
           Driveways, patios, stamped concrete, foundations &amp; more.
@@ -65,7 +57,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-hero-up hero-stagger-4">
           <a
             href="tel:8563128923"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--primary)] text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.4)]"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[#0a0a0a] text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.4)]"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -75,7 +67,7 @@ export default function Hero() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white text-lg font-bold uppercase tracking-wider border-[3px] border-white/40 hover:border-white hover:bg-white/10 transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-transparent text-white text-lg font-bold uppercase tracking-wider border-[3px] border-white/30 hover:border-white hover:bg-white/5 transition-all duration-300"
             style={{ fontFamily: "var(--font-body)" }}
           >
             Free Estimate
@@ -101,7 +93,7 @@ export default function Hero() {
                 {stat.value}
               </div>
               <div
-                className="text-xs sm:text-sm text-white/60 mt-1 font-medium uppercase tracking-wider"
+                className="text-xs sm:text-sm text-white/40 mt-1 font-medium uppercase tracking-wider"
                 style={{ fontFamily: "var(--font-body)" }}
               >
                 {stat.label}
@@ -114,7 +106,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <svg
-          className="w-6 h-6 text-white/50"
+          className="w-6 h-6 text-white/30"
           fill="none"
           stroke="currentColor"
           strokeWidth={3}

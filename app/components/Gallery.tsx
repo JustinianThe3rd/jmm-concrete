@@ -1,7 +1,4 @@
-"use client";
-
 import Image from "next/image";
-import { useRef, useEffect, useState } from "react";
 
 const galleryItems = [
   { src: "/images/download (2).png", label: "Stamped Concrete Patio" },
@@ -13,46 +10,12 @@ const galleryItems = [
 ];
 
 export default function Gallery() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Auto-scroll with requestAnimationFrame for buttery smoothness
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    let animationId: number;
-    let speed = 0.8; // pixels per frame — smooth and readable
-
-    const step = () => {
-      if (!isPaused && track) {
-        track.scrollLeft += speed;
-
-        // When we've scrolled through the first set, reset seamlessly
-        const halfWidth = track.scrollWidth / 3;
-        if (track.scrollLeft >= halfWidth * 2) {
-          track.scrollLeft = halfWidth;
-        }
-      }
-      animationId = requestAnimationFrame(step);
-    };
-
-    animationId = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(animationId);
-  }, [isPaused]);
-
-  // Pause on touch/click
-  const handlePointerDown = () => setIsPaused(true);
-  const handlePointerUp = () => setIsPaused(false);
-  const handlePointerLeave = () => setIsPaused(false);
-
-  // Triple the items for seamless loop
-  const looped = [...galleryItems, ...galleryItems, ...galleryItems];
+  const looped = [...galleryItems, ...galleryItems];
 
   return (
     <section
       id="gallery"
-      className="section-padding bg-[var(--primary)] overflow-hidden"
+      className="section-padding bg-[#0a0a0a] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -70,49 +33,38 @@ export default function Gallery() {
             Project Gallery
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
-          <p className="mt-5 text-white/60 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
+          <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Browse some of our recent concrete and masonry projects.
             Every job completed with care and precision.
           </p>
         </div>
       </div>
 
-      {/* Auto-scrolling track */}
-      <div className="px-4 sm:px-6 lg:px-8">
+      {/* Scrolling track — CSS animation, no JS needed */}
+      <div className="relative">
         <div
-          ref={trackRef}
-          onPointerDown={handlePointerDown}
-          onPointerUp={handlePointerUp}
-          onPointerLeave={handlePointerLeave}
-          onTouchStart={handlePointerDown}
-          onTouchEnd={handlePointerUp}
-          className="flex gap-4 overflow-x-auto cursor-grab active:cursor-grabbing select-none"
-          style={{
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-            WebkitOverflowScrolling: "touch",
-          }}
+          className="flex gap-5 animate-marquee"
+          style={{ width: "max-content" }}
         >
           {looped.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[30vw]"
+              className="flex-shrink-0 w-[75vw] sm:w-[55vw] md:w-[40vw] lg:w-[28vw]"
             >
-              <div className="relative border-[3px] border-white/20 hover:border-[var(--accent)] transition-all duration-500 bg-[var(--primary-light)] group overflow-hidden">
-                {/* Image container — offset parent for fill */}
+              <div className="relative border-2 border-white/10 hover:border-[var(--accent)] bg-[#141414] group overflow-hidden transition-colors duration-500">
                 <div className="relative w-full aspect-[2/1] overflow-hidden">
                   <Image
                     src={item.src}
                     alt={item.label}
                     fill
-                    sizes="(min-width: 1024px) 30vw, (min-width: 768px) 45vw, (min-width: 640px) 60vw, 80vw"
-                    className="object-cover object-center transition-transform duration-700 var(--ease-out-expo) group-hover:scale-105"
-                    style={{ objectPosition: "50% 50%" }}
+                    sizes="(min-width: 1024px) 28vw, (min-width: 768px) 40vw, (min-width: 640px) 55vw, 75vw"
+                    style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                    className="transition-transform duration-700 group-hover:scale-105"
                     draggable={false}
                   />
                 </div>
                 {/* Label overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-4 pt-10">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-5 pt-14">
                   <span
                     className="text-white font-black uppercase text-sm sm:text-base tracking-wider"
                     style={{ fontFamily: "var(--font-display)" }}
@@ -126,22 +78,14 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Controls row */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex items-center justify-between">
+      {/* Hint */}
+      <div className="text-center mt-8">
         <span
-          className="text-white/30 text-xs font-medium uppercase tracking-widest"
+          className="text-white/20 text-xs font-medium uppercase tracking-[0.3em]"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          {isPaused ? "▶ Tap to resume" : "Pause to explore →"}
+          Auto-scrolling · Hover to pause
         </span>
-        <div className="flex gap-1.5">
-          {galleryItems.map((_, i) => (
-            <div
-              key={i}
-              className="w-1.5 h-1.5 bg-white/20 rounded-full"
-            />
-          ))}
-        </div>
       </div>
     </section>
   );

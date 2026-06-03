@@ -1,18 +1,18 @@
 const reviews = [
   {
-    name: "Angi Verified",
+    name: "Cara Artuso",
     rating: 5,
-    text: "Travis and team do great work! They are reliable, dedicated, detail oriented and provide above and beyond customer service. I would definitely recommend them.",
+    text: "David was exactly the person I needed to speak with! We just bought an older home and he was able to walk me through its idiosyncratic plumbing, he taught me how to fix what I could do myself and gave a fair price to fix what couldn't wait.",
   },
   {
-    name: "Verified Customer",
+    name: "Lina Lyons",
     rating: 5,
-    text: "Great group of people.",
+    text: "I called several plumbers and no one could get me today. I finally called this place and was here in less than 30 minutes! Tyler was respectful and courteous, answered all my questions and even gave me some tips to avoid any other issues.",
   },
   {
-    name: "Verified Customer",
+    name: "Jacqui Swift",
     rating: 5,
-    text: "Reasonably priced for quality work.",
+    text: "Wonderful service. Calls you back and shows up when they say they will, which is very rare now days.",
   },
 ];
 
@@ -38,8 +38,8 @@ export default function Reviews() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Don&apos;t just take our word for it — hear from homeowners and
-            businesses we&apos;ve worked with.
+            Don&apos;t just take our word for it — hear from homeowners
+            we&apos;ve helped across Moorestown and beyond.
           </p>
         </div>
       </div>

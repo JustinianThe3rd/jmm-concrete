@@ -24,7 +24,7 @@ export default function Hero() {
             ))}
           </div>
           <span className="text-white/80 text-sm font-medium uppercase tracking-wider">
-            5.0 Stars — 8 Happy Customers
+            5.0 Stars — 4 Happy Customers
           </span>
         </div>
 
@@ -33,11 +33,11 @@ export default function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-white animate-hero-up hero-stagger-2"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Haddon Heights&apos;
+          Moorestown&apos;s
           <br />
-          <span className="text-[var(--accent)]">Premier</span>
+          <span className="text-[var(--accent)]">Trusted</span>
           <br />
-          Concrete Pumping
+          Local Plumber
         </h1>
 
         {/* Gold accent bar */}
@@ -48,22 +48,22 @@ export default function Hero() {
           className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed animate-hero-up hero-stagger-3"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Foundation pouring, basement deepening, concrete construction &
-          more. Residential and commercial — serving Haddon Heights, NJ
-          &amp; surrounding areas. Open 24 hours.
+          Prompt, efficient, and trustworthy plumbing service for your home.
+          Serving Moorestown, NJ &amp; surrounding areas. When you need a
+          plumber who shows up — call Joe.
         </p>
 
         {/* CTA Buttons */}
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-hero-up hero-stagger-4">
           <a
-            href="tel:8565344386"
+            href="tel:8562351386"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[#0a0a0a] text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.4)]"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            Call (856) 534-4386
+            Call (856) 235-1386
           </a>
           <a
             href="#contact"
@@ -78,7 +78,7 @@ export default function Hero() {
         <div className="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto animate-hero-up hero-stagger-4">
           {[
             { value: "5.0", label: "Star Rating" },
-            { value: "24/7", label: "Open Now" },
+            { value: "Fast", label: "Response" },
             { value: "Free", label: "Estimates" },
           ].map((stat, i) => (
             <div

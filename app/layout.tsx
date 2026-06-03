@@ -17,26 +17,25 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SJ Concrete Pumping, LLC | Haddon Heights, NJ | Concrete Pumping & Construction",
+  title: "Joe Hitchens Plumbing | Moorestown, NJ | Trusted Local Plumber",
   description:
-    "SJ Concrete Pumping, LLC — Haddon Heights' trusted concrete pumping and construction contractor. Foundation pouring, basement deepening, concrete work, demolition, renovations & more. Open 24 hours. Call (856) 534-4386!",
+    "Joe Hitchens Plumbing — Moorestown's trusted local plumber. Prompt, efficient, and trustworthy service for all your plumbing needs. Serving Moorestown, NJ & surrounding areas. Call (856) 235-1386!",
   keywords: [
-    "concrete pumping",
-    "Haddon Heights NJ",
-    "foundation pouring",
-    "basement deepening",
-    "concrete construction",
-    "demolition",
-    "home renovations",
-    "foundation installation",
-    "slab foundation",
-    "concrete work",
-    "construction site excavation",
+    "plumber",
+    "Moorestown NJ",
+    "plumbing",
+    "emergency plumber",
+    "plumbing repair",
+    "drain cleaning",
+    "water heater",
+    "pipe repair",
+    "local plumber",
+    "residential plumbing",
   ],
   openGraph: {
-    title: "SJ Concrete Pumping, LLC | Haddon Heights, NJ",
+    title: "Joe Hitchens Plumbing | Moorestown, NJ",
     description:
-      "Concrete pumping, foundation pouring, basement deepening & more. Serving Haddon Heights and surrounding areas. Open 24 hours.",
+      "Moorestown's trusted local plumber. Prompt, efficient, and trustworthy plumbing service. Call (856) 235-1386!",
     type: "website",
     locale: "en_US",
   },

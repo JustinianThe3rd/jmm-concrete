@@ -1,43 +1,43 @@
 const services = [
   {
-    title: "Concrete Pumping",
+    title: "Plumbing Repair",
     description:
-      "High-efficient concrete pumping for residential and commercial projects of any size.",
+      "From leaky faucets to burst pipes — fast, reliable repairs done right the first time.",
   },
   {
-    title: "Foundation Pouring",
+    title: "Drain Cleaning",
     description:
-      "Precision foundation pouring for new construction, additions, and repairs.",
+      "Professional drain cleaning to clear clogs and keep your pipes flowing freely.",
   },
   {
-    title: "Basement Deepening",
+    title: "Water Heaters",
     description:
-      "Lower your basement floor and gain valuable living space with expert excavation and pouring.",
+      "Installation, repair, and replacement of tank and tankless water heaters.",
   },
   {
-    title: "Foundation Installation",
+    title: "Pipe Installation",
     description:
-      "Complete foundation installation — slab, crawl space, and full basement foundations.",
+      "New pipe installation, repiping, and pipe replacement for homes of any age.",
   },
   {
-    title: "Demolition",
+    title: "Emergency Service",
     description:
-      "Safe, controlled demolition of structures, slabs, and interior spaces.",
+      "Plumbing emergencies don&apos;t wait — and neither do we. Call us when you need help fast.",
   },
   {
-    title: "Site Excavation",
+    title: "Fixture Installation",
     description:
-      "Construction site excavation, grading, and dirt removal done right the first time.",
+      "Sinks, toilets, showers, tubs — expert fixture installation and upgrades.",
   },
   {
-    title: "Home Renovations",
+    title: "Sewer & Sump Pumps",
     description:
-      "Remodeling, additions, and exterior structural repairs for your home.",
+      "Sewer line repair, sump pump installation, and basement waterproofing solutions.",
   },
   {
-    title: "Concrete Work",
+    title: "Home Inspections",
     description:
-      "Sidewalks, walkways, driveways, slabs, and decorative concrete finishes.",
+      "Thorough plumbing inspections for homebuyers, sellers, and routine maintenance.",
   },
 ];
 
@@ -61,9 +61,8 @@ export default function Services() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            From concrete pumping to basement deepening, we handle it all
-            with precision and care. Residential and commercial — no job too
-            big or small.
+            From emergency repairs to routine maintenance, we handle all your
+            plumbing needs with prompt, efficient, and trustworthy service.
           </p>
         </div>
 

@@ -10,21 +10,21 @@ export default function Footer() {
                 className="text-3xl font-black text-white uppercase"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                SJ
+                JH
               </span>
               <div className="leading-none">
                 <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-                  Concrete Pumping, LLC
+                  Hitchens Plumbing
                 </span>
                 <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Haddon Heights, NJ
+                  Moorestown, NJ
                 </span>
               </div>
             </div>
             <p className="text-white/50 leading-relaxed max-w-md text-sm" style={{ fontFamily: "var(--font-body)" }}>
-              Haddon Heights&apos; trusted concrete pumping and construction contractor.
-              Specializing in foundation pouring, basement deepening, demolition,
-              renovations &amp; more. Open 24 hours.
+              Moorestown&apos;s trusted local plumber. Specializing in repairs,
+              drain cleaning, water heaters, pipe installation, and emergency
+              service. Prompt, efficient, and trustworthy.
             </p>
             <div className="flex items-center gap-1 mt-4">
               {[...Array(5)].map((_, i) => (
@@ -80,12 +80,12 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3 text-sm text-white/50" style={{ fontFamily: "var(--font-body)" }}>
-              <li className="uppercase tracking-wide">Concrete Pumping</li>
-              <li className="uppercase tracking-wide">Foundation Pouring</li>
-              <li className="uppercase tracking-wide">Basement Deepening</li>
-              <li className="uppercase tracking-wide">Demolition</li>
-              <li className="uppercase tracking-wide">Site Excavation</li>
-              <li className="uppercase tracking-wide">Home Renovations</li>
+              <li className="uppercase tracking-wide">Plumbing Repair</li>
+              <li className="uppercase tracking-wide">Drain Cleaning</li>
+              <li className="uppercase tracking-wide">Water Heaters</li>
+              <li className="uppercase tracking-wide">Pipe Installation</li>
+              <li className="uppercase tracking-wide">Emergency Service</li>
+              <li className="uppercase tracking-wide">Fixture Installation</li>
             </ul>
           </div>
         </div>
@@ -93,13 +93,13 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
-            &copy; {new Date().getFullYear()} SJ Concrete Pumping, LLC. All rights reserved.
+            &copy; {new Date().getFullYear()} Joe Hitchens Plumbing. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
-            <span className="uppercase tracking-wide">Haddon Heights, NJ 08035</span>
+            <span className="uppercase tracking-wide">Moorestown, NJ 08057</span>
             <span className="text-white/10">|</span>
-            <a href="tel:8565344386" className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide">
-              (856) 534-4386
+            <a href="tel:8562351386" className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide">
+              (856) 235-1386
             </a>
           </div>
         </div>

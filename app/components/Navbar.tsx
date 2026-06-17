@@ -40,14 +40,14 @@ export default function Navbar() {
             className="text-2xl sm:text-3xl font-black uppercase tracking-tight"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            JH
+            DD
           </span>
           <div className="leading-none hidden sm:block">
             <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-              Hitchens Plumbing
+              Dior Tradesman
             </span>
             <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-              Moorestown, NJ
+              HVAC Contractor
             </span>
           </div>
         </a>
@@ -65,14 +65,14 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="tel:8562351386"
+            href="tel:8567238448"
             className="ml-4 inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--accent)] text-[#0a0a0a] text-sm font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-colors"
             style={{ fontFamily: "var(--font-body)" }}
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
-            (856) 235-1386
+            (856) 723-8448
           </a>
         </nav>
 
@@ -114,14 +114,14 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="tel:8562351386"
+              href="tel:8567238448"
               className="mt-6 inline-flex items-center justify-center gap-3 w-full py-4 bg-[var(--accent)] text-[#0a0a0a] text-lg font-bold uppercase tracking-wider"
               style={{ fontFamily: "var(--font-body)" }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              Call (856) 235-1386
+              Call (856) 723-8448
             </a>
           </nav>
         </div>

@@ -1,13 +1,13 @@
 "use client";
 
 const hours = [
-  { day: "Monday", time: "7 AM – 5:30 PM" },
-  { day: "Tuesday", time: "7 AM – 5:30 PM" },
-  { day: "Wednesday", time: "7 AM – 5:30 PM" },
-  { day: "Thursday", time: "7 AM – 5:30 PM" },
-  { day: "Friday", time: "7 AM – 5:30 PM" },
-  { day: "Saturday", time: "By Appointment" },
-  { day: "Sunday", time: "Closed" },
+  { day: "Monday", time: "Open 24 Hours" },
+  { day: "Tuesday", time: "Open 24 Hours" },
+  { day: "Wednesday", time: "Open 24 Hours" },
+  { day: "Thursday", time: "Open 24 Hours" },
+  { day: "Friday", time: "Open 24 Hours" },
+  { day: "Saturday", time: "Open 24 Hours" },
+  { day: "Sunday", time: "Open 24 Hours" },
 ];
 
 function getTodayIndex(): number {
@@ -37,8 +37,8 @@ export default function Contact() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Need a plumber you can trust? Call us today — we&apos;d love to
-            help with any plumbing needs, big or small.
+            Need an HVAC contractor you can trust? Call us today — we&apos;d love to
+            help with any heating, cooling, or ventilation needs, big or small.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="space-y-4">
             {/* Phone */}
             <a
-              href="tel:8562351386"
+              href="tel:8567238448"
               className="flex items-center gap-4 p-5 border-[3px] border-white/10 bg-[#141414] hover:border-[var(--accent)] hover:shadow-brutal hover:-translate-y-0.5 transition-all duration-300 group"
             >
               <div className="w-12 h-12 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
@@ -63,7 +63,7 @@ export default function Contact() {
                   className="text-xl font-black text-white group-hover:text-[var(--accent)] transition-colors"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  (856) 235-1386
+                  (856) 723-8448
                 </div>
               </div>
             </a>
@@ -134,14 +134,14 @@ export default function Contact() {
 
             {/* CTA */}
             <a
-              href="tel:8562351386"
+              href="tel:8567238448"
               className="flex items-center justify-center gap-2 w-full py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider text-lg hover:bg-[var(--accent-hover)] transition-colors shadow-brutal-lg"
               style={{ fontFamily: "var(--font-body)" }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              Call Now — Free Estimates
+              Call Now — 24/7 HVAC Service
             </a>
           </div>
 
@@ -155,7 +155,7 @@ export default function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Joe Hitchens Plumbing location map — Moorestown, NJ"
+              title="DJ & Dior Tradesman location map — Moorestown, NJ"
             />
           </div>
         </div>

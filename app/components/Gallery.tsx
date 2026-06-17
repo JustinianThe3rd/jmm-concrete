@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const galleryItems = [
-  { src: "/images/download (2).png", label: "Pipe Repair & Installation" },
-  { src: "/images/download (3).png", label: "Fixtures & Fittings" },
-  { src: "/images/download (7).png", label: "Water Heater Service" },
-  { src: "/images/download (5).png", label: "Drain & Sewer Work" },
-  { src: "/images/download (6).png", label: "Home Plumbing Solutions" },
-  { src: "/images/download (4).png", label: "General Plumbing" },
+  { src: "/images/download (2).png", label: "AC Unit Installation" },
+  { src: "/images/download (3).png", label: "Furnace Replacement" },
+  { src: "/images/download (7).png", label: "Ductwork & Ventilation" },
+  { src: "/images/download (5).png", label: "Commercial HVAC Setup" },
+  { src: "/images/download (6).png", label: "Residential HVAC System" },
+  { src: "/images/download (4).png", label: "HVAC Maintenance" },
 ];
 
 export default function Gallery() {
@@ -34,8 +34,8 @@ export default function Gallery() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Browse some of our recent plumbing projects. Every job completed
-            with care and precision.
+            Browse some of our recent HVAC projects. Every job completed
+            with expert care and precision.
           </p>
         </div>
       </div>

@@ -2,17 +2,17 @@ const reviews = [
   {
     name: "Cara Artuso",
     rating: 5,
-    text: "David was exactly the person I needed to speak with! We just bought an older home and he was able to walk me through its idiosyncratic plumbing, he taught me how to fix what I could do myself and gave a fair price to fix what couldn't wait.",
+    text: "DJ & Dior were exactly who I needed! Our AC died during a heatwave and they were at our door within the hour. Professional, fair pricing, and they walked us through everything. Highly recommend!",
   },
   {
     name: "Lina Lyons",
     rating: 5,
-    text: "I called several plumbers and no one could get me today. I finally called this place and was here in less than 30 minutes! Tyler was respectful and courteous, answered all my questions and even gave me some tips to avoid any other issues.",
+    text: "I called several HVAC companies and no one could come out same day. DJ & Dior showed up in less than 30 minutes! Respectful, courteous, and answered all my questions. They even gave tips to keep our system running efficiently.",
   },
   {
     name: "Jacqui Swift",
     rating: 5,
-    text: "Wonderful service. Calls you back and shows up when they say they will, which is very rare now days.",
+    text: "Wonderful service. Calls you back and shows up when they say they will, which is very rare nowadays. Our furnace was repaired the same day — fair price and excellent workmanship.",
   },
 ];
 
@@ -38,8 +38,8 @@ export default function Reviews() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Don&apos;t just take our word for it — hear from homeowners
-            we&apos;ve helped across Moorestown and beyond.
+            Don&apos;t just take our word for it — hear from homeowners and
+            businesses we&apos;ve helped across Moorestown and beyond.
           </p>
         </div>
       </div>

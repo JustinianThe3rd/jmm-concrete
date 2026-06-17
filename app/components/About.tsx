@@ -11,7 +11,7 @@ export default function About() {
               <div className="relative w-full aspect-[2/1]">
                 <Image
                   src="/images/download (1).png"
-                  alt="Professional plumbing work by Joe Hitchens Plumbing"
+                  alt="DJ & Dior Tradesman HVAC technician at work"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   priority
@@ -57,27 +57,27 @@ export default function About() {
               className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
               style={{ fontFamily: "var(--font-display)" }}
             >
-              Why Joe?
+              Why DJ & Dior?
             </h2>
             <div className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6" />
             <p className="text-lg leading-relaxed text-white/50" style={{ fontFamily: "var(--font-body)" }}>
               <strong className="text-white">
-                Joe Hitchens Plumbing
+                DJ & Dior Tradesman
               </strong>{" "}
-              is Moorestown&apos;s trusted local plumber, known for showing up
-              when he says he will and getting the job done right. From emergency
-              repairs to routine maintenance, we bring honesty, efficiency, and
-              skill to every call.
+              is Moorestown&apos;s trusted HVAC contractor, known for showing up
+              when they say they will and getting the job done right. From emergency
+              repairs to new installations, we bring honesty, efficiency, and
+              expertise to every call.
             </p>
 
             <div className="mt-8 space-y-4">
               {[
-                "Prompt & Efficient Service",
+                "24/7 Emergency HVAC Service",
                 "Trusted & Transparent Pricing",
-                "Emergency Plumbing Repairs",
+                "Heating & Cooling Repairs",
                 "Free Consultations & Estimates",
-                "Drain Cleaning & Water Heaters",
-                "Pipe Installation & Repair",
+                "AC Repair & Installation",
+                "Ductwork & Ventilation Services",
                 "Serving Moorestown & Surrounding Areas",
               ].map((item, i) => (
                 <div key={item} className={`flex items-center gap-4 reveal delay-${i + 1}`}>
@@ -104,7 +104,7 @@ export default function About() {
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:8562351386"
+                href="tel:8567238448"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
                 style={{ fontFamily: "var(--font-body)" }}
               >

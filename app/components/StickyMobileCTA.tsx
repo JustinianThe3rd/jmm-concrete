@@ -24,7 +24,7 @@ export default function StickyMobileCTA() {
     >
       <div className="flex">
         <a
-          href="tel:8562351386"
+          href="tel:8567238448"
           className="flex-1 flex items-center justify-center gap-2 py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider text-sm"
           style={{ fontFamily: "var(--font-body)" }}
         >

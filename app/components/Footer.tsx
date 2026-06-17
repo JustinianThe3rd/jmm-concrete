@@ -10,21 +10,21 @@ export default function Footer() {
                 className="text-3xl font-black text-white uppercase"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                JH
+                DD
               </span>
               <div className="leading-none">
                 <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--accent)]">
-                  Hitchens Plumbing
+                  Dior Tradesman
                 </span>
                 <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-white/40">
-                  Moorestown, NJ
+                  HVAC Contractor
                 </span>
               </div>
             </div>
             <p className="text-white/50 leading-relaxed max-w-md text-sm" style={{ fontFamily: "var(--font-body)" }}>
-              Moorestown&apos;s trusted local plumber. Specializing in repairs,
-              drain cleaning, water heaters, pipe installation, and emergency
-              service. Prompt, efficient, and trustworthy.
+              Moorestown&apos;s trusted HVAC contractor. Specializing in heating,
+              cooling, ventilation, and emergency service. Open 24 hours.
+              Prompt, efficient, and trustworthy.
             </p>
             <div className="flex items-center gap-1 mt-4">
               {[...Array(5)].map((_, i) => (
@@ -80,12 +80,12 @@ export default function Footer() {
               Services
             </h4>
             <ul className="space-y-3 text-sm text-white/50" style={{ fontFamily: "var(--font-body)" }}>
-              <li className="uppercase tracking-wide">Plumbing Repair</li>
-              <li className="uppercase tracking-wide">Drain Cleaning</li>
-              <li className="uppercase tracking-wide">Water Heaters</li>
-              <li className="uppercase tracking-wide">Pipe Installation</li>
-              <li className="uppercase tracking-wide">Emergency Service</li>
-              <li className="uppercase tracking-wide">Fixture Installation</li>
+              <li className="uppercase tracking-wide">AC Repair</li>
+              <li className="uppercase tracking-wide">Heating Repair</li>
+              <li className="uppercase tracking-wide">HVAC Installation</li>
+              <li className="uppercase tracking-wide">Ductwork Services</li>
+              <li className="uppercase tracking-wide">Emergency HVAC</li>
+              <li className="uppercase tracking-wide">Preventive Maintenance</li>
             </ul>
           </div>
         </div>
@@ -93,13 +93,13 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
-            &copy; {new Date().getFullYear()} Joe Hitchens Plumbing. All rights reserved.
+            &copy; {new Date().getFullYear()} DJ & Dior Tradesman. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
             <span className="uppercase tracking-wide">Moorestown, NJ 08057</span>
             <span className="text-white/10">|</span>
-            <a href="tel:8562351386" className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide">
-              (856) 235-1386
+            <a href="tel:8567238448" className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide">
+              (856) 723-8448
             </a>
           </div>
         </div>

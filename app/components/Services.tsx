@@ -1,43 +1,43 @@
 const services = [
   {
-    title: "Plumbing Repair",
+    title: "AC Repair",
     description:
-      "From leaky faucets to burst pipes — fast, reliable repairs done right the first time.",
+      "Fast, reliable air conditioning repair to keep your home cool when it matters most.",
   },
   {
-    title: "Drain Cleaning",
+    title: "Heating Repair",
     description:
-      "Professional drain cleaning to clear clogs and keep your pipes flowing freely.",
+      "Expert furnace and heating system repairs — we get your heat back on fast.",
   },
   {
-    title: "Water Heaters",
+    title: "HVAC Installation",
     description:
-      "Installation, repair, and replacement of tank and tankless water heaters.",
+      "New system installation, replacements, and upgrades for homes of any size.",
   },
   {
-    title: "Pipe Installation",
+    title: "Ductwork Services",
     description:
-      "New pipe installation, repiping, and pipe replacement for homes of any age.",
+      "Duct cleaning, repair, and sealing to improve airflow and indoor air quality.",
   },
   {
-    title: "Emergency Service",
+    title: "Emergency HVAC",
     description:
-      "Plumbing emergencies don&apos;t wait — and neither do we. Call us when you need help fast.",
+      "HVAC emergencies don&apos;t wait — and neither do we. Open 24 hours for urgent repairs.",
   },
   {
-    title: "Fixture Installation",
+    title: "Preventive Maintenance",
     description:
-      "Sinks, toilets, showers, tubs — expert fixture installation and upgrades.",
+      "Seasonal tune-ups and maintenance plans to keep your system running efficiently.",
   },
   {
-    title: "Sewer & Sump Pumps",
+    title: "Indoor Air Quality",
     description:
-      "Sewer line repair, sump pump installation, and basement waterproofing solutions.",
+      "Air purifiers, humidifiers, and ventilation solutions for healthier indoor air.",
   },
   {
-    title: "Home Inspections",
+    title: "Commercial HVAC",
     description:
-      "Thorough plumbing inspections for homebuyers, sellers, and routine maintenance.",
+      "Full-service heating and cooling for offices, retail, and commercial properties.",
   },
 ];
 
@@ -61,8 +61,8 @@ export default function Services() {
           </h2>
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            From emergency repairs to routine maintenance, we handle all your
-            plumbing needs with prompt, efficient, and trustworthy service.
+            From emergency repairs to new installations, we handle all your
+            heating, cooling, and ventilation needs with prompt, expert service.
           </p>
         </div>
 

@@ -61,13 +61,11 @@ export default function About() {
             </h2>
             <div className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6" />
             <p className="text-lg leading-relaxed text-white/50" style={{ fontFamily: "var(--font-body)" }}>
-              <strong className="text-white">
-                DJ & Dior Tradesman
-              </strong>{" "}
-              is Moorestown&apos;s trusted HVAC contractor, known for showing up
+              Owned by <strong className="text-white">Dante Curry</strong>, DJ &amp; Dior
+              Tradesman is Marlton&apos;s trusted HVAC contractor, known for showing up
               when they say they will and getting the job done right. From emergency
               repairs to new installations, we bring honesty, efficiency, and
-              expertise to every call.
+              expertise to every call. Commercial &amp; residential — we cover the tri-state area.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -78,7 +76,7 @@ export default function About() {
                 "Free Consultations & Estimates",
                 "AC Repair & Installation",
                 "Ductwork & Ventilation Services",
-                "Serving Moorestown & Surrounding Areas",
+                "Serving the Tri-State Area",
               ].map((item, i) => (
                 <div key={item} className={`flex items-center gap-4 reveal delay-${i + 1}`}>
                   <div className="w-7 h-7 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">

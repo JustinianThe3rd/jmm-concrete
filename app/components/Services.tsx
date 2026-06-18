@@ -2,7 +2,7 @@ const services = [
   {
     title: "AC Repair",
     description:
-      "Fast, reliable air conditioning repair to keep your home cool when it matters most.",
+      "Fast, reliable air conditioning repair to keep your home or business cool when it matters most.",
   },
   {
     title: "Heating Repair",
@@ -12,7 +12,7 @@ const services = [
   {
     title: "HVAC Installation",
     description:
-      "New system installation, replacements, and upgrades for homes of any size.",
+      "New system installation, replacements, and upgrades for homes and businesses of any size.",
   },
   {
     title: "Ductwork Services",

@@ -33,7 +33,7 @@ export default function Hero() {
           className="heading-hero font-black uppercase leading-[0.9] tracking-tight text-white animate-hero-up hero-stagger-2"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Moorestown&apos;s
+          Marlton&apos;s
           <br />
           <span className="text-[var(--accent)]">24/7</span>
           <br />
@@ -48,9 +48,9 @@ export default function Hero() {
           className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed animate-hero-up hero-stagger-3 px-2"
           style={{ fontFamily: "var(--font-body)" }}
         >
-          Expert heating, cooling, and ventilation service for your home or business.
-          Open 24 hours. Serving Moorestown, NJ &amp; surrounding areas.
-          When you need HVAC help fast — call DJ &amp; Dior.
+          Expert heating, cooling, and ventilation for commercial and residential.
+          Open 24 hours. Serving the tri-state area.
+          When you need HVAC help fast — call Dante Curry.
         </p>
 
         {/* CTA Buttons */}

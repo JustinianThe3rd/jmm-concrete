@@ -22,8 +22,9 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/50 leading-relaxed max-w-md text-sm" style={{ fontFamily: "var(--font-body)" }}>
-              Moorestown&apos;s trusted HVAC contractor. Specializing in heating,
+              Marlton&apos;s trusted HVAC contractor. Specializing in heating,
               cooling, ventilation, and emergency service. Open 24 hours.
+              Serving the tri-state area — commercial and residential.
               Prompt, efficient, and trustworthy.
             </p>
             <div className="flex items-center gap-1 mt-4">
@@ -96,7 +97,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} DJ & Dior Tradesman. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
-            <span className="uppercase tracking-wide">Moorestown, NJ 08057</span>
+            <span className="uppercase tracking-wide">Marlton, NJ</span>
             <span className="text-white/10">|</span>
             <a href="tel:8567238448" className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide">
               (856) 723-8448

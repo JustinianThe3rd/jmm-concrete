@@ -25,12 +25,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "DJ & Dior Tradesman | Moorestown, NJ | 24/7 HVAC Contractor",
+  title: "DJ & Dior Tradesman | Marlton, NJ | 24/7 HVAC Contractor",
   description:
-    "DJ & Dior Tradesman — Moorestown's trusted HVAC contractor. Open 24 hours. Expert heating, cooling, and ventilation service for homes and businesses. Serving Moorestown, NJ & surrounding areas. Call (856) 723-8448!",
+    "DJ & Dior Tradesman — Marlton's trusted HVAC contractor. Open 24 hours. Expert heating, cooling, and ventilation for commercial and residential. Serving the tri-state area. Call (856) 723-8448!",
   keywords: [
     "HVAC contractor",
-    "Moorestown NJ",
+    "Marlton NJ",
     "heating repair",
     "AC repair",
     "HVAC service",
@@ -41,11 +41,12 @@ export const metadata: Metadata = {
     "24 hour HVAC",
     "residential HVAC",
     "commercial HVAC",
+    "tri-state HVAC",
   ],
   openGraph: {
-    title: "DJ & Dior Tradesman | Moorestown, NJ | 24/7 HVAC",
+    title: "DJ & Dior Tradesman | Marlton, NJ | 24/7 HVAC",
     description:
-      "Moorestown's trusted HVAC contractor. Open 24 hours. Expert heating, cooling, and ventilation service. Call (856) 723-8448!",
+      "Marlton's trusted HVAC contractor. Open 24 hours. Expert heating, cooling, and ventilation for commercial and residential. Call (856) 723-8448!",
     type: "website",
     locale: "en_US",
   },

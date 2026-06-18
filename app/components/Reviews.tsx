@@ -39,7 +39,7 @@ export default function Reviews() {
           <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
           <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
             Don&apos;t just take our word for it — hear from homeowners and
-            businesses we&apos;ve helped across Moorestown and beyond.
+            businesses we&apos;ve helped across the tri-state area.
           </p>
         </div>
       </div>

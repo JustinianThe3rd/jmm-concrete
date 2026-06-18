@@ -84,7 +84,7 @@ export default function Contact() {
                   className="text-lg font-black text-white"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  Moorestown, NJ 08057
+                  Marlton, NJ
                 </div>
               </div>
             </div>
@@ -148,14 +148,14 @@ export default function Contact() {
           {/* Map */}
           <div className="border-[3px] border-white/10 shadow-brutal-lg overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3054.5!2d-74.9583!3d39.9616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDU3JzQxLjgiTiA3NcKwNTcnMzAuMCJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0!2d-74.9224!3d39.8912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDUzJzI3LjEiTiA3NMKwNTUnMjAuNiJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: 460 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="DJ & Dior Tradesman location map — Moorestown, NJ"
+              title="DJ & Dior Tradesman location map — Marlton, NJ"
             />
           </div>
         </div>

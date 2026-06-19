@@ -1,13 +1,14 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+import { EASE, TRANSITION_HERO } from "./ui/motion";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: (delay: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay },
+    transition: { ...TRANSITION_HERO, delay },
   }),
 };
 
@@ -32,12 +33,7 @@ export default function Hero() {
         >
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
-              <svg
-                key={i}
-                className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--accent)]"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
+              <svg key={i} className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[var(--accent)]" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
             ))}
@@ -47,13 +43,10 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Heading — large, brutalist, guaranteed visible */}
+        {/* Heading */}
         <motion.h1
           className="font-black uppercase leading-[0.9] tracking-tight text-white"
-          style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(2.5rem, 10vw, 8rem)",
-          }}
+          style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 10vw, 8rem)" }}
           initial="hidden"
           animate="visible"
           variants={fadeUp}
@@ -71,11 +64,7 @@ export default function Hero() {
           className="mx-auto mt-4 sm:mt-6 mb-4 sm:mb-6 h-1 bg-[var(--accent)]"
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{
-            duration: 0.8,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            delay: 0.5,
-          }}
+          transition={{ duration: 0.8, ease: EASE, delay: 0.5 }}
           style={{ originX: 0.5 }}
         />
 
@@ -88,9 +77,9 @@ export default function Hero() {
           variants={fadeUp}
           custom={0.55}
         >
-          Expert heating, cooling, and ventilation for commercial and
-          residential. Open 24 hours. Serving the tri-state area. When you
-          need HVAC help fast — call Dante Curry.
+          Expert heating, cooling, and ventilation for commercial and residential.
+          Open 24 hours. Serving the tri-state area. When you need HVAC help
+          fast — call Dante Curry.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -106,11 +95,7 @@ export default function Hero() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 bg-[var(--accent)] text-[#0a0a0a] text-base sm:text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.4)] min-h-[48px]"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            <svg
-              className="w-5 h-5 flex-shrink-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
+            <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
             Call (856) 723-8448
@@ -138,16 +123,10 @@ export default function Hero() {
             { value: "Fast", label: "Response" },
           ].map((stat) => (
             <div key={stat.label} className="text-center px-1">
-              <div
-                className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
+              <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase" style={{ fontFamily: "var(--font-display)" }}>
                 {stat.value}
               </div>
-              <div
-                className="text-[10px] sm:text-xs md:text-sm text-white/40 mt-0.5 sm:mt-1 font-medium uppercase tracking-wider"
-                style={{ fontFamily: "var(--font-body)" }}
-              >
+              <div className="text-[10px] sm:text-xs md:text-sm text-white/40 mt-0.5 sm:mt-1 font-medium uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
                 {stat.label}
               </div>
             </div>
@@ -162,17 +141,8 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.6 }}
       >
-        <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-white/30 animate-bounce"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={3}
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="square"
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-white/30 animate-bounce" fill="none" stroke="currentColor" strokeWidth={3} viewBox="0 0 24 24">
+          <path strokeLinecap="square" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
       </motion.div>
     </section>

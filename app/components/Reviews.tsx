@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./ui/SectionHeading";
+import { EASE } from "./ui/motion";
 
 const reviews = [
   {
@@ -96,7 +97,7 @@ export default function Reviews() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.5, ease: EASE }}
         >
           <div className="inline-flex items-center gap-3 px-6 py-3 border-2 border-white/10 bg-[#141414]">
             <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none">

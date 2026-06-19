@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { EASE } from "./ui/motion";
 
 const checklistItems = [
   "24/7 Emergency HVAC Service",
@@ -24,7 +25,7 @@ export default function About() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 0.6, ease: EASE }}
           >
             <div className="border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)] overflow-hidden bg-[#141414]">
               <div className="relative w-full aspect-[2/1]">
@@ -46,7 +47,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.3,
               }}
             >
@@ -85,7 +86,7 @@ export default function About() {
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.5, ease: EASE }}
             >
               About Us
             </motion.span>
@@ -97,7 +98,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{
                 duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.1,
               }}
             >
@@ -110,7 +111,7 @@ export default function About() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.2,
               }}
               style={{ originX: 0 }}
@@ -123,7 +124,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.25,
               }}
             >
@@ -145,7 +146,7 @@ export default function About() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{
                     duration: 0.4,
-                    ease: [0.25, 0.46, 0.45, 0.94],
+                    ease: EASE,
                     delay: 0.3 + i * 0.06,
                   }}
                 >
@@ -180,7 +181,7 @@ export default function About() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.6,
               }}
             >

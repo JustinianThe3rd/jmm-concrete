@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { EASE } from "./ui/motion";
 
 const hours = [
   { day: "Monday", time: "Open 24 Hours" },
@@ -29,7 +30,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.6, ease: EASE }}
         >
           <span
             className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
@@ -64,7 +65,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              transition={{ duration: 0.5, ease: EASE }}
             >
               <div className="w-12 h-12 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
                 <svg
@@ -99,7 +100,7 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.1,
               }}
             >
@@ -145,7 +146,7 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.2,
               }}
             >
@@ -217,7 +218,7 @@ export default function Contact() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: 0.3,
               }}
             >
@@ -238,7 +239,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 0.6, ease: EASE }}
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0!2d-74.9224!3d39.8912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDUzJzI3LjEiTiA3NMKwNTUnMjAuNiJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"

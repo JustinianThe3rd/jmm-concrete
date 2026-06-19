@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import { EASE } from "./ui/motion";
 
 export default function StickyMobileCTA() {
   const [visible, setVisible] = useState(true);
@@ -19,7 +20,7 @@ export default function StickyMobileCTA() {
           initial={{ y: 100 }}
           animate={{ y: 0 }}
           exit={{ y: 100 }}
-          transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.3, ease: EASE }}
         >
           <div className="flex">
             <a

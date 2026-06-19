@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import type { ReactNode } from "react";
+import { EASE } from "./motion";
 
 interface AnimatedDivProps {
   children: ReactNode;
@@ -19,7 +20,7 @@ const variants: Variants = {
     x: 0,
     transition: {
       duration: 0.6,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: EASE,
     },
   },
 };
@@ -52,7 +53,7 @@ export default function AnimatedDiv({
           x: 0,
           transition: {
             duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
+            ease: EASE,
             delay,
           },
         },

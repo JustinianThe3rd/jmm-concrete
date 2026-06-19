@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionHeading from "./ui/SectionHeading";
+import { EASE } from "./ui/motion";
 
 const services = [
   {
@@ -67,7 +68,7 @@ export default function Services() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94],
+                ease: EASE,
                 delay: i * 0.08,
               }}
             >
@@ -94,7 +95,7 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.5, ease: EASE }}
         >
           <a
             href="#contact"

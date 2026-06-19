@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { EASE } from "./motion";
 
 interface SectionHeadingProps {
   eyebrow: string;
@@ -21,7 +22,7 @@ export default function SectionHeading({
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        transition={{ duration: 0.5, ease: EASE }}
       >
         {eyebrow}
       </motion.span>
@@ -33,7 +34,7 @@ export default function SectionHeading({
         viewport={{ once: true, amount: 0.3 }}
         transition={{
           duration: 0.6,
-          ease: [0.25, 0.46, 0.45, 0.94],
+          ease: EASE,
           delay: 0.1,
         }}
       >
@@ -46,7 +47,7 @@ export default function SectionHeading({
         viewport={{ once: true, amount: 0.3 }}
         transition={{
           duration: 0.7,
-          ease: [0.25, 0.46, 0.45, 0.94],
+          ease: EASE,
           delay: 0.2,
         }}
         style={{ originX: 0 }}
@@ -60,7 +61,7 @@ export default function SectionHeading({
           viewport={{ once: true, amount: 0.3 }}
           transition={{
             duration: 0.5,
-            ease: [0.25, 0.46, 0.45, 0.94],
+            ease: EASE,
             delay: 0.3,
           }}
         >

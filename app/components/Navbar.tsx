@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { EASE } from "./ui/motion";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -25,7 +26,7 @@ export default function Navbar() {
       className="fixed top-0 left-0 right-0 z-50"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={{ duration: 0.5, ease: EASE }}
       style={{
         backgroundColor: scrolled ? "rgba(10,10,10,0.97)" : "transparent",
         borderBottom: scrolled

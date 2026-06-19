@@ -7,37 +7,37 @@ const GALLERY_ITEMS = [
   {
     title: "AC Unit Installation",
     category: "HVAC",
-    image: "/images/download (2).png",
+    image: "/images/gallery-ac-install.png",
     alt: "Professional AC unit installation for a residential home in Marlton, NJ",
   },
   {
     title: "Furnace Replacement",
     category: "Heating",
-    image: "/images/download (3).png",
+    image: "/images/gallery-furnace.png",
     alt: "Furnace replacement and heating system upgrade in South Jersey",
   },
   {
     title: "Ductwork & Ventilation",
     category: "HVAC",
-    image: "/images/download (7).png",
+    image: "/images/gallery-ductwork.png",
     alt: "Custom ductwork fabrication and ventilation service for improved airflow",
   },
   {
     title: "Commercial HVAC Setup",
     category: "Commercial",
-    image: "/images/download (5).png",
+    image: "/images/gallery-commercial.png",
     alt: "Full commercial HVAC system installation at a business property",
   },
   {
     title: "Residential HVAC System",
     category: "Residential",
-    image: "/images/download (6).png",
+    image: "/images/gallery-residential.png",
     alt: "Complete residential HVAC installation with indoor and outdoor units",
   },
   {
     title: "HVAC Maintenance",
     category: "Service",
-    image: "/images/download (4).png",
+    image: "/images/gallery-maintenance.png",
     alt: "Preventive HVAC maintenance and system tune-up service",
   },
 ];
@@ -56,7 +56,7 @@ function GalleryCard({
   return (
     <div className="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl overflow-hidden relative group cursor-pointer">
       {/* Image container — portrait aspect ratio */}
-      <div className="relative aspect-[3/4] w-full">
+      <div className="relative aspect-[2/1] w-full">
         <Image
           src={image}
           alt={alt}
@@ -101,10 +101,6 @@ export default function Gallery() {
 
       {/* Marquee */}
       <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 lg:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 lg:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-
         {/* Two marquee rows */}
         <div className="flex flex-col gap-4">
           {/* Row 1 — left to right */}

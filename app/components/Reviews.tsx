@@ -37,10 +37,6 @@ export default function Reviews() {
 
       {/* Scrolling carousel — marquee system */}
       <div className="relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 lg:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 lg:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-
         <div
           className="marquee-track"
           style={{ "--marquee-duration": "35s" } as React.CSSProperties}

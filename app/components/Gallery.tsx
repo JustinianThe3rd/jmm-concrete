@@ -62,7 +62,8 @@ function GalleryCard({
           alt={alt}
           fill
           sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
-          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+          style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+          className="transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 

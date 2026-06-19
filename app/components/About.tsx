@@ -34,7 +34,7 @@ export default function About() {
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center"
+                style={{ objectFit: "cover", objectPosition: "50% 50%" }}
               />
             </div>
             {/* Floating Badge */}

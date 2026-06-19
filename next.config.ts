@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    root: "/Users/skibtown32/my-cool-site",
+  },
 };
 
 export default nextConfig;

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -13,25 +14,24 @@ const navLinks = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [open]);
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 60);
+  });
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-[#0a0a0a] border-b-[3px] border-[var(--accent)]"
-          : "bg-transparent border-b-[3px] border-transparent"
-      }`}
+    <motion.header
+      className="fixed top-0 left-0 right-0 z-50"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+      style={{
+        backgroundColor: scrolled ? "rgba(10,10,10,0.97)" : "transparent",
+        borderBottom: scrolled
+          ? "3px solid var(--accent)"
+          : "3px solid transparent",
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20">
         {/* Logo */}
@@ -97,35 +97,43 @@ export default function Navbar() {
 
       {/* Mobile Nav Overlay */}
       {open && (
-        <div className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[#0a0a0a] z-40 flex flex-col">
+        <motion.div
+          className="md:hidden fixed inset-0 top-16 sm:top-20 bg-[#0a0a0a] z-40 flex flex-col"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.2 }}
+        >
           <nav className="flex flex-col items-center justify-center flex-1 gap-2 px-6">
             {navLinks.map((link, i) => (
-              <a
+              <motion.a
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
-                className="block w-full text-center py-4 text-2xl font-black uppercase tracking-wider text-white hover:text-[var(--accent)] border-b border-white/10 transition-colors animate-fade-up"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  animationDelay: `${i * 0.05}s`,
-                }}
+                className="block w-full text-center py-4 text-2xl font-black uppercase tracking-wider text-white hover:text-[var(--accent)] border-b border-white/10 transition-colors"
+                style={{ fontFamily: "var(--font-display)" }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05, duration: 0.3 }}
               >
                 {link.label}
-              </a>
+              </motion.a>
             ))}
-            <a
+            <motion.a
               href="tel:8567238448"
               className="mt-6 inline-flex items-center justify-center gap-3 w-full py-4 bg-[var(--accent)] text-[#0a0a0a] text-lg font-bold uppercase tracking-wider"
               style={{ fontFamily: "var(--font-body)" }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               Call (856) 723-8448
-            </a>
+            </motion.a>
           </nav>
-        </div>
+        </motion.div>
       )}
-    </header>
+    </motion.header>
   );
 }

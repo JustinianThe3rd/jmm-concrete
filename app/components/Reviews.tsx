@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import SectionHeading from "./ui/SectionHeading";
+
 const reviews = [
   {
     name: "Cara Artuso",
@@ -22,26 +27,11 @@ export default function Reviews() {
   return (
     <section id="reviews" className="section-padding bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
-          <span
-            className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Testimonials
-          </span>
-          <h2
-            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            What Customers Say
-          </h2>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
-          <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Don&apos;t just take our word for it — hear from homeowners and
-            businesses we&apos;ve helped across the tri-state area.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Testimonials"
+          title="What Customers Say"
+          description="Don&apos;t just take our word for it — hear from homeowners and businesses we&apos;ve helped across the tri-state area."
+        />
       </div>
 
       {/* Scrolling carousel */}
@@ -101,7 +91,13 @@ export default function Reviews() {
 
       {/* Google Badge */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mt-12">
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <div className="inline-flex items-center gap-3 px-6 py-3 border-2 border-white/10 bg-[#141414]">
             <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none">
               <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4" />
@@ -116,7 +112,7 @@ export default function Reviews() {
               5.0 out of 5 on Google
             </span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -47,16 +47,35 @@
 }
 
 /* ── Base ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-height: 100dvh;
+  min-height: 100vh;
 }
 
-html {
-  scroll-behavior: smooth;
+/* Prevent horizontal overflow from any child */
+#root,
+#__next,
+main {
+  overflow-x: hidden;
 }
 
 /* ── Brutalist Utilities ── */
@@ -76,93 +95,6 @@ html {
   box-shadow: 6px 6px 0 0 var(--border-brutal);
 }
 
-/* ── Scroll-triggered reveal (Intersection Observer via JS adds .is-visible) ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-}
-
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-}
-
-.reveal-left.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
-}
-
-.reveal-right.is-visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.reveal-scale {
-  opacity: 0;
-  transform: scale(0.92);
-  transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
-}
-
-.reveal-scale.is-visible {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Stagger delays */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-.delay-6 { transition-delay: 0.6s; }
-
-/* ── Hero entrance animations ── */
-@keyframes hero-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes hero-line {
-  from {
-    width: 0;
-  }
-  to {
-    width: 6rem;
-  }
-}
-
-.animate-hero-up {
-  animation: hero-fade-up 0.9s var(--ease-out-expo) both;
-}
-
-.animate-hero-line {
-  animation: hero-line 1s var(--ease-out-expo) 0.5s both;
-}
-
-.hero-stagger-1 { animation-delay: 0.15s; }
-.hero-stagger-2 { animation-delay: 0.3s; }
-.hero-stagger-3 { animation-delay: 0.45s; }
-.hero-stagger-4 { animation-delay: 0.6s; }
-
 /* ── Infinite auto-scroll marquee for gallery ── */
 @keyframes marquee-scroll {
   0% {
@@ -175,6 +107,7 @@ html {
 
 .animate-marquee {
   animation: marquee-scroll 24s linear infinite;
+  will-change: transform;
 }
 
 .animate-marquee:hover,
@@ -226,19 +159,17 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-scale {
-    opacity: 1 !important;
-    transform: none !important;
-  }
 }
 
 /* ── Section Spacing ── */
 .section-padding {
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 4rem 1.5rem;
+  }
 }
 
 @media (min-width: 768px) {
@@ -284,4 +215,20 @@ button:focus-visible {
 .carousel-touch {
   touch-action: pan-y;
   -webkit-overflow-scrolling: touch;
+}
+
+/* ── Responsive typography clamp (fallback for non-motion headings) ── */
+.heading-hero {
+  font-size: clamp(2.5rem, 10vw, 8rem);
+}
+
+.heading-section {
+  font-size: clamp(1.75rem, 6vw, 3.75rem);
+}
+
+/* ── Safe area insets for notched devices ── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
 }

@@ -64,33 +64,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                if (!('IntersectionObserver' in window)) return;
-                var observer = new IntersectionObserver(function(entries) {
-                  entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                      entry.target.classList.add('is-visible');
-                      observer.unobserve(entry.target);
-                    }
-                  });
-                }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-                var batch = function() {
-                  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
-                    observer.observe(el);
-                  });
-                };
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', batch);
-                } else {
-                  batch();
-                }
-              })();
-            `,
-          }}
-        />
       </body>
     </html>
   );

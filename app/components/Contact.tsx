@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const hours = [
   { day: "Monday", time: "Open 24 Hours" },
   { day: "Tuesday", time: "Open 24 Hours" },
@@ -22,7 +24,13 @@ export default function Contact() {
     <section id="contact" className="section-padding bg-[#0a0a0a]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <span
             className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
             style={{ fontFamily: "var(--font-body)" }}
@@ -30,33 +38,48 @@ export default function Contact() {
             Get In Touch
           </span>
           <h2
-            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
+            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white heading-section"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Contact Us
           </h2>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
-          <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Need an HVAC contractor you can trust? Call us today — we&apos;d love to
-            help with any heating, cooling, or ventilation needs, big or small.
+          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5" />
+          <p
+            className="mt-5 text-white/50 text-lg leading-relaxed"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            Need an HVAC contractor you can trust? Call us today — we&apos;d love
+            to help with any heating, cooling, or ventilation needs, big or
+            small.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-4">
             {/* Phone */}
-            <a
+            <motion.a
               href="tel:8567238448"
               className="flex items-center gap-4 p-5 border-[3px] border-white/10 bg-[#141414] hover:border-[var(--accent)] hover:shadow-brutal hover:-translate-y-0.5 transition-all duration-300 group"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               <div className="w-12 h-12 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6 text-[#0a0a0a]" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-6 h-6 text-[#0a0a0a]"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
               </div>
               <div>
-                <div className="text-xs text-white/40 font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                <div
+                  className="text-xs text-white/40 font-bold uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
                   Call Us
                 </div>
                 <div
@@ -66,18 +89,43 @@ export default function Contact() {
                   (856) 723-8448
                 </div>
               </div>
-            </a>
+            </motion.a>
 
             {/* Address */}
-            <div className="flex items-center gap-4 p-5 border-[3px] border-white/10 bg-[#141414]">
+            <motion.div
+              className="flex items-center gap-4 p-5 border-[3px] border-white/10 bg-[#141414]"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.1,
+              }}
+            >
               <div className="w-12 h-12 bg-[#1a1a1a] flex items-center justify-center flex-shrink-0 border border-white/10">
-                <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="square" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="square" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg
+                  className="w-6 h-6 text-[var(--accent)]"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="square"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    strokeLinecap="square"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
                 </svg>
               </div>
               <div>
-                <div className="text-xs text-white/40 font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                <div
+                  className="text-xs text-white/40 font-bold uppercase tracking-wider"
+                  style={{ fontFamily: "var(--font-body)" }}
+                >
                   Location
                 </div>
                 <div
@@ -87,21 +135,46 @@ export default function Contact() {
                   Marlton, NJ
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Hours */}
-            <div className="p-5 border-[3px] border-white/10 bg-[#141414]">
+            <motion.div
+              className="p-5 border-[3px] border-white/10 bg-[#141414]"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2,
+              }}
+            >
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-[#1a1a1a] flex items-center justify-center flex-shrink-0 border border-white/10">
-                  <svg className="w-6 h-6 text-[var(--accent)]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="square" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    className="w-6 h-6 text-[var(--accent)]"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="square"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs text-white/40 font-bold uppercase tracking-wider" style={{ fontFamily: "var(--font-body)" }}>
+                  <div
+                    className="text-xs text-white/40 font-bold uppercase tracking-wider"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
                     Business Hours
                   </div>
-                  <div className="text-xs text-white/40" style={{ fontFamily: "var(--font-body)" }}>
+                  <div
+                    className="text-xs text-white/40"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  >
                     Today: {hours[todayIndex].time}
                   </div>
                 </div>
@@ -125,28 +198,48 @@ export default function Contact() {
                         )}
                         {entry.day}
                       </span>
-                      <span className={isToday ? "font-bold" : ""}>{entry.time}</span>
+                      <span className={isToday ? "font-bold" : ""}>
+                        {entry.time}
+                      </span>
                     </div>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
 
             {/* CTA */}
-            <a
+            <motion.a
               href="tel:8567238448"
               className="flex items-center justify-center gap-2 w-full py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider text-lg hover:bg-[var(--accent-hover)] transition-colors shadow-brutal-lg"
               style={{ fontFamily: "var(--font-body)" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.3,
+              }}
             >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               Call Now — 24/7 HVAC Service
-            </a>
+            </motion.a>
           </div>
 
           {/* Map */}
-          <div className="border-[3px] border-white/10 shadow-brutal-lg overflow-hidden">
+          <motion.div
+            className="border-[3px] border-white/10 shadow-brutal-lg overflow-hidden"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3060.0!2d-74.9224!3d39.8912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMznCsDUzJzI3LjEiTiA3NMKwNTUnMjAuNiJX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="100%"
@@ -157,7 +250,7 @@ export default function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
               title="DJ & Dior Tradesman location map — Marlton, NJ"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

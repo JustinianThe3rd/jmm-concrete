@@ -1,3 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94], delay },
+  }),
+};
+
 export default function Hero() {
   return (
     <section
@@ -10,7 +23,13 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 text-center pt-24 pb-16 sm:pt-20 sm:pb-12">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 border border-white/10 mb-6 sm:mb-8 animate-hero-up hero-stagger-1">
+        <motion.div
+          className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/5 border border-white/10 mb-6 sm:mb-8"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={0.15}
+        >
           <div className="flex gap-0.5">
             {[...Array(5)].map((_, i) => (
               <svg
@@ -26,41 +45,72 @@ export default function Hero() {
           <span className="text-white/80 text-xs sm:text-sm font-medium uppercase tracking-wider">
             5.0 Stars — Trusted HVAC Service
           </span>
-        </div>
+        </motion.div>
 
-        {/* Heading */}
-        <h1
-          className="heading-hero font-black uppercase leading-[0.9] tracking-tight text-white animate-hero-up hero-stagger-2"
-          style={{ fontFamily: "var(--font-display)" }}
+        {/* Heading — large, brutalist, guaranteed visible */}
+        <motion.h1
+          className="font-black uppercase leading-[0.9] tracking-tight text-white"
+          style={{
+            fontFamily: "var(--font-display)",
+            fontSize: "clamp(2.5rem, 10vw, 8rem)",
+          }}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={0.3}
         >
           Marlton&apos;s
           <br />
           <span className="text-[var(--accent)]">24/7</span>
           <br />
           HVAC Experts
-        </h1>
+        </motion.h1>
 
         {/* Gold accent bar */}
-        <div className="mx-auto mt-4 sm:mt-6 mb-4 sm:mb-6 h-1 bg-[var(--accent)] animate-hero-line" />
+        <motion.div
+          className="mx-auto mt-4 sm:mt-6 mb-4 sm:mb-6 h-1 bg-[var(--accent)]"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.25, 0.46, 0.45, 0.94],
+            delay: 0.5,
+          }}
+          style={{ originX: 0.5 }}
+        />
 
         {/* Subheading */}
-        <p
-          className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed animate-hero-up hero-stagger-3 px-2"
+        <motion.p
+          className="text-base sm:text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed px-2"
           style={{ fontFamily: "var(--font-body)" }}
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={0.55}
         >
-          Expert heating, cooling, and ventilation for commercial and residential.
-          Open 24 hours. Serving the tri-state area.
-          When you need HVAC help fast — call Dante Curry.
-        </p>
+          Expert heating, cooling, and ventilation for commercial and
+          residential. Open 24 hours. Serving the tri-state area. When you
+          need HVAC help fast — call Dante Curry.
+        </motion.p>
 
         {/* CTA Buttons */}
-        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 animate-hero-up hero-stagger-4">
+        <motion.div
+          className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={0.7}
+        >
           <a
             href="tel:8567238448"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 sm:px-8 sm:py-4 bg-[var(--accent)] text-[#0a0a0a] text-base sm:text-lg font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 shadow-brutal-lg hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_rgba(0,0,0,0.4)] min-h-[48px]"
             style={{ fontFamily: "var(--font-body)" }}
           >
-            <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <svg
+              className="w-5 h-5 flex-shrink-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
               <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
             </svg>
             Call (856) 723-8448
@@ -72,20 +122,22 @@ export default function Hero() {
           >
             Free Estimate
           </a>
-        </div>
+        </motion.div>
 
         {/* Quick Stats */}
-        <div className="mt-10 sm:mt-16 grid grid-cols-3 gap-2 sm:gap-4 max-w-md sm:max-w-lg mx-auto animate-hero-up hero-stagger-4">
+        <motion.div
+          className="mt-10 sm:mt-16 grid grid-cols-3 gap-2 sm:gap-4 max-w-md sm:max-w-lg mx-auto"
+          initial="hidden"
+          animate="visible"
+          variants={fadeUp}
+          custom={0.85}
+        >
           {[
             { value: "24/7", label: "Available" },
             { value: "5.0", label: "Star Rating" },
             { value: "Fast", label: "Response" },
-          ].map((stat, i) => (
-            <div
-              key={stat.label}
-              className="text-center animate-hero-up px-1"
-              style={{ animationDelay: `${0.7 + i * 0.1}s` }}
-            >
+          ].map((stat) => (
+            <div key={stat.label} className="text-center px-1">
               <div
                 className="text-2xl sm:text-3xl md:text-4xl font-black text-white uppercase"
                 style={{ fontFamily: "var(--font-display)" }}
@@ -100,21 +152,29 @@ export default function Hero() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <motion.div
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.2, duration: 0.6 }}
+      >
         <svg
-          className="w-5 h-5 sm:w-6 sm:h-6 text-white/30"
+          className="w-5 h-5 sm:w-6 sm:h-6 text-white/30 animate-bounce"
           fill="none"
           stroke="currentColor"
           strokeWidth={3}
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="square" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <path
+            strokeLinecap="square"
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
         </svg>
-      </div>
+      </motion.div>
     </section>
   );
 }

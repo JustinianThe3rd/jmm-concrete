@@ -1,4 +1,17 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+
+const checklistItems = [
+  "24/7 Emergency HVAC Service",
+  "Trusted & Transparent Pricing",
+  "Heating & Cooling Repairs",
+  "Free Consultations & Estimates",
+  "AC Repair & Installation",
+  "Ductwork & Ventilation Services",
+  "Serving the Tri-State Area",
+];
 
 export default function About() {
   return (
@@ -6,7 +19,13 @@ export default function About() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Image Side */}
-          <div className="relative reveal-left">
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <div className="border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)] overflow-hidden bg-[#141414]">
               <div className="relative w-full aspect-[2/1]">
                 <Image
@@ -20,7 +39,17 @@ export default function About() {
               </div>
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-5 -right-2 sm:right-6 bg-[var(--accent)] text-[#0a0a0a] p-5 border-2 border-[var(--accent-hover)]">
+            <motion.div
+              className="absolute -bottom-5 -right-2 sm:right-6 bg-[var(--accent)] text-[#0a0a0a] p-5 border-2 border-[var(--accent-hover)]"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.3,
+              }}
+            >
               <div
                 className="text-5xl font-black leading-none"
                 style={{ fontFamily: "var(--font-display)" }}
@@ -39,46 +68,87 @@ export default function About() {
                   </svg>
                 ))}
               </div>
-              <div className="text-[10px] font-bold uppercase tracking-wider mt-1" style={{ fontFamily: "var(--font-body)" }}>
+              <div
+                className="text-[10px] font-bold uppercase tracking-wider mt-1"
+                style={{ fontFamily: "var(--font-body)" }}
+              >
                 Google Reviews
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Text Side */}
-          <div className="reveal-right">
-            <span
+          <div>
+            <motion.span
               className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
               style={{ fontFamily: "var(--font-body)" }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             >
               About Us
-            </span>
-            <h2
-              className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
+            </motion.span>
+            <motion.h2
+              className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white heading-section"
               style={{ fontFamily: "var(--font-display)" }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.1,
+              }}
             >
               Why DJ & Dior?
-            </h2>
-            <div className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6" />
-            <p className="text-lg leading-relaxed text-white/50" style={{ fontFamily: "var(--font-body)" }}>
-              Owned by <strong className="text-white">Dante Curry</strong>, DJ &amp; Dior
-              Tradesman is Marlton&apos;s trusted HVAC contractor, known for showing up
-              when they say they will and getting the job done right. From emergency
-              repairs to new installations, we bring honesty, efficiency, and
-              expertise to every call. Commercial &amp; residential — we cover the tri-state area.
-            </p>
+            </motion.h2>
+            <motion.div
+              className="w-16 h-1 bg-[var(--accent)] mt-5 mb-6"
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.2,
+              }}
+              style={{ originX: 0 }}
+            />
+            <motion.p
+              className="text-lg leading-relaxed text-white/50"
+              style={{ fontFamily: "var(--font-body)" }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.25,
+              }}
+            >
+              Owned by <strong className="text-white">Dante Curry</strong>, DJ &amp;
+              Dior Tradesman is Marlton&apos;s trusted HVAC contractor, known for
+              showing up when they say they will and getting the job done right.
+              From emergency repairs to new installations, we bring honesty,
+              efficiency, and expertise to every call. Commercial &amp; residential —
+              we cover the tri-state area.
+            </motion.p>
 
             <div className="mt-8 space-y-4">
-              {[
-                "24/7 Emergency HVAC Service",
-                "Trusted & Transparent Pricing",
-                "Heating & Cooling Repairs",
-                "Free Consultations & Estimates",
-                "AC Repair & Installation",
-                "Ductwork & Ventilation Services",
-                "Serving the Tri-State Area",
-              ].map((item, i) => (
-                <div key={item} className={`flex items-center gap-4 reveal delay-${i + 1}`}>
+              {checklistItems.map((item, i) => (
+                <motion.div
+                  key={item}
+                  className="flex items-center gap-4"
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{
+                    duration: 0.4,
+                    ease: [0.25, 0.46, 0.45, 0.94],
+                    delay: 0.3 + i * 0.06,
+                  }}
+                >
                   <div className="w-7 h-7 bg-[var(--accent)] flex items-center justify-center flex-shrink-0">
                     <svg
                       className="w-4 h-4 text-[#0a0a0a]"
@@ -87,7 +157,10 @@ export default function About() {
                       strokeWidth={3}
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="square" d="M5 13l4 4L19 7" />
+                      <path
+                        strokeLinecap="square"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <span
@@ -96,17 +169,31 @@ export default function About() {
                   >
                     {item}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <motion.div
+              className="mt-10 flex flex-col sm:flex-row gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 0.6,
+              }}
+            >
               <a
                 href="tel:8567238448"
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--accent)] text-[#0a0a0a] font-bold uppercase tracking-wider hover:bg-[var(--accent-hover)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(201,168,76,0.3)]"
                 style={{ fontFamily: "var(--font-body)" }}
               >
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <svg
+                  className="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
                 Call Now
@@ -118,7 +205,7 @@ export default function About() {
               >
                 Free Estimate
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

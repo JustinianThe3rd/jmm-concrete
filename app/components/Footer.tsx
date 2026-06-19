@@ -1,8 +1,18 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] border-t-4 border-[var(--accent)] mb-16 md:mb-0">
+    <motion.footer
+      className="bg-[#0a0a0a] border-t-4 border-[var(--accent)] mb-16 md:mb-0"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 reveal">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
@@ -21,11 +31,14 @@ export default function Footer() {
                 </span>
               </div>
             </div>
-            <p className="text-white/50 leading-relaxed max-w-md text-sm" style={{ fontFamily: "var(--font-body)" }}>
+            <p
+              className="text-white/50 leading-relaxed max-w-md text-sm"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
               Marlton&apos;s trusted HVAC contractor. Specializing in heating,
-              cooling, ventilation, and emergency service. Open 24 hours.
-              Serving the tri-state area — commercial and residential.
-              Prompt, efficient, and trustworthy.
+              cooling, ventilation, and emergency service. Open 24 hours. Serving
+              the tri-state area — commercial and residential. Prompt, efficient,
+              and trustworthy.
             </p>
             <div className="flex items-center gap-1 mt-4">
               {[...Array(5)].map((_, i) => (
@@ -80,7 +93,10 @@ export default function Footer() {
             >
               Services
             </h4>
-            <ul className="space-y-3 text-sm text-white/50" style={{ fontFamily: "var(--font-body)" }}>
+            <ul
+              className="space-y-3 text-sm text-white/50"
+              style={{ fontFamily: "var(--font-body)" }}
+            >
               <li className="uppercase tracking-wide">AC Repair</li>
               <li className="uppercase tracking-wide">Heating Repair</li>
               <li className="uppercase tracking-wide">HVAC Installation</li>
@@ -93,18 +109,28 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
-            &copy; {new Date().getFullYear()} DJ & Dior Tradesman. All rights reserved.
+          <p
+            className="text-sm text-white/30"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
+            &copy; {new Date().getFullYear()} DJ & Dior Tradesman. All rights
+            reserved.
           </p>
-          <div className="flex items-center gap-4 text-sm text-white/30" style={{ fontFamily: "var(--font-body)" }}>
+          <div
+            className="flex items-center gap-4 text-sm text-white/30"
+            style={{ fontFamily: "var(--font-body)" }}
+          >
             <span className="uppercase tracking-wide">Marlton, NJ</span>
             <span className="text-white/10">|</span>
-            <a href="tel:8567238448" className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide">
+            <a
+              href="tel:8567238448"
+              className="hover:text-[var(--accent)] transition-colors uppercase tracking-wide"
+            >
               (856) 723-8448
             </a>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

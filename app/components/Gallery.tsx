@@ -1,4 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import SectionHeading from "./ui/SectionHeading";
 
 const galleryItems = [
   { src: "/images/download (2).png", label: "AC Unit Installation" },
@@ -18,26 +22,11 @@ export default function Gallery() {
       className="section-padding bg-[#0a0a0a] overflow-hidden"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 reveal">
-          <span
-            className="text-[var(--accent)] font-bold uppercase tracking-[0.25em] text-sm"
-            style={{ fontFamily: "var(--font-body)" }}
-          >
-            Our Work
-          </span>
-          <h2
-            className="mt-3 text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-[0.95] text-white"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            Project Gallery
-          </h2>
-          <div className="w-16 h-1 bg-[var(--accent)] mx-auto mt-5 animate-hero-line" />
-          <p className="mt-5 text-white/50 text-lg leading-relaxed" style={{ fontFamily: "var(--font-body)" }}>
-            Browse some of our recent HVAC projects. Every job completed
-            with expert care and precision.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Our Work"
+          title="Project Gallery"
+          description="Browse some of our recent HVAC projects. Every job completed with expert care and precision."
+        />
       </div>
 
       {/* Scrolling track — CSS animation, no JS needed */}

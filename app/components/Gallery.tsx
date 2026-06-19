@@ -7,87 +7,43 @@ const GALLERY_ITEMS = [
   {
     title: "AC Unit Installation",
     category: "HVAC",
-    image: "/images/gallery-ac-install.png",
+    image: "/images/download (2).png",
     alt: "Professional AC unit installation for a residential home in Marlton, NJ",
   },
   {
     title: "Furnace Replacement",
     category: "Heating",
-    image: "/images/gallery-furnace.png",
+    image: "/images/download (3).png",
     alt: "Furnace replacement and heating system upgrade in South Jersey",
   },
   {
     title: "Ductwork & Ventilation",
     category: "HVAC",
-    image: "/images/gallery-ductwork.png",
+    image: "/images/download (7).png",
     alt: "Custom ductwork fabrication and ventilation service for improved airflow",
   },
   {
     title: "Commercial HVAC Setup",
     category: "Commercial",
-    image: "/images/gallery-commercial.png",
+    image: "/images/download (5).png",
     alt: "Full commercial HVAC system installation at a business property",
   },
   {
     title: "Residential HVAC System",
     category: "Residential",
-    image: "/images/gallery-residential.png",
+    image: "/images/download (6).png",
     alt: "Complete residential HVAC installation with indoor and outdoor units",
   },
   {
     title: "HVAC Maintenance",
     category: "Service",
-    image: "/images/gallery-maintenance.png",
+    image: "/images/download (4).png",
     alt: "Preventive HVAC maintenance and system tune-up service",
   },
 ];
 
-function GalleryCard({
-  title,
-  category,
-  image,
-  alt,
-}: {
-  title: string;
-  category: string;
-  image: string;
-  alt: string;
-}) {
-  return (
-    <div className="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl overflow-hidden relative group cursor-pointer">
-      {/* Image container — portrait aspect ratio */}
-      <div className="relative aspect-[2/1] w-full">
-        <Image
-          src={image}
-          alt={alt}
-          fill
-          sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
-          style={{ objectFit: "cover", objectPosition: "50% 50%" }}
-          className="transition-transform duration-500 group-hover:scale-105"
-        />
-      </div>
-
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 sm:p-6">
-        <span className="text-xs font-semibold uppercase tracking-wider mb-1 text-[var(--accent)]">
-          {category}
-        </span>
-        <h3
-          className="text-white font-bold text-base sm:text-lg leading-tight"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {title}
-        </h3>
-      </div>
-
-      {/* Hover overlay */}
-      <div className="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors duration-300 pointer-events-none" />
-    </div>
-  );
-}
-
 export default function Gallery() {
-  const doubled = [...GALLERY_ITEMS, ...GALLERY_ITEMS];
+  const looped = [...GALLERY_ITEMS, ...GALLERY_ITEMS];
 
   return (
     <section id="gallery" className="section-padding bg-[#0a0a0a] overflow-hidden">
@@ -99,77 +55,41 @@ export default function Gallery() {
         />
       </div>
 
-      {/* Marquee */}
-      <div className="relative">
-        {/* Two marquee rows */}
-        <div className="flex flex-col gap-4">
-          {/* Row 1 — left to right */}
-          <div>
-            <div
-              className="marquee-track"
-              style={{ "--marquee-duration": "50s" } as React.CSSProperties}
-            >
-              <div className="marquee-content gap-4 px-2">
-                {doubled.map((item, i) => (
-                  <GalleryCard
-                    key={`r1-${i}`}
-                    title={item.title}
-                    category={item.category}
-                    image={item.image}
-                    alt={item.alt}
-                  />
-                ))}
+      {/* Single scrolling row */}
+      <div className="flex gap-4 animate-marquee">
+        {looped.map((item, i) => (
+          <div
+            key={i}
+            className="flex-shrink-0 w-64 sm:w-72 lg:w-80"
+          >
+            <div className="relative rounded-xl overflow-hidden group">
+              {/* Image — portrait card, always centered */}
+              <div className="relative w-full aspect-[3/4] bg-[#141414]">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+                  style={{ objectFit: "cover", objectPosition: "50% 50%" }}
+                  className="transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
-              <div className="marquee-content gap-4 px-2" aria-hidden="true">
-                {doubled.map((item, i) => (
-                  <GalleryCard
-                    key={`r1-dup-${i}`}
-                    title={item.title}
-                    category={item.category}
-                    image={item.image}
-                    alt={item.alt}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
 
-          {/* Row 2 — right to left */}
-          <div>
-            <div
-              className="marquee-track"
-              style={
-                {
-                  "--marquee-duration": "45s",
-                  animationDirection: "reverse",
-                } as React.CSSProperties
-              }
-            >
-              <div className="marquee-content gap-4 px-2">
-                {[...doubled].reverse().map((item, i) => (
-                  <GalleryCard
-                    key={`r2-${i}`}
-                    title={item.title}
-                    category={item.category}
-                    image={item.image}
-                    alt={item.alt}
-                  />
-                ))}
-              </div>
-              <div className="marquee-content gap-4 px-2" aria-hidden="true">
-                {[...doubled].reverse().map((item, i) => (
-                  <GalleryCard
-                    key={`r2-dup-${i}`}
-                    title={item.title}
-                    category={item.category}
-                    image={item.image}
-                    alt={item.alt}
-                  />
-                ))}
+              {/* Label overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-5">
+                <span className="text-[var(--accent)] text-xs font-semibold uppercase tracking-wider mb-1">
+                  {item.category}
+                </span>
+                <h3
+                  className="text-white font-bold text-base sm:text-lg leading-tight"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {item.title}
+                </h3>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

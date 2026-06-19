@@ -27,9 +27,9 @@ export default function About() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: EASE }}
           >
-            <div className="relative rounded-2xl overflow-hidden aspect-[2/1] bg-[#141414] border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#141414] border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)]">
               <Image
-                src="/images/about-team.png"
+                src="/images/download (1).png"
                 alt="DJ & Dior Tradesman HVAC technician at work"
                 fill
                 priority

@@ -95,24 +95,31 @@ main {
   box-shadow: 6px 6px 0 0 var(--border-brutal);
 }
 
-/* ── Infinite auto-scroll marquee for gallery ── */
+/* ── Marquee System (Pure CSS) ── */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll var(--marquee-duration, 30s) linear infinite;
+}
+
+.marquee-track:hover,
+.marquee-track:focus-within {
+  animation-play-state: paused;
+}
+
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  min-width: 100%;
+}
+
 @keyframes marquee-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(-50%);
   }
-}
-
-.animate-marquee {
-  animation: marquee-scroll 24s linear infinite;
-  will-change: transform;
-}
-
-.animate-marquee:hover,
-.animate-marquee:focus-within {
-  animation-play-state: paused;
 }
 
 /* ── Smooth scroll-snap carousel (manual fallback) ── */

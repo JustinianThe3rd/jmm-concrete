@@ -27,17 +27,15 @@ export default function About() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, ease: EASE }}
           >
-            <div className="border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)] overflow-hidden bg-[#141414]">
-              <div className="relative w-full aspect-[2/1]">
-                <Image
-                  src="/images/download (1).png"
-                  alt="DJ & Dior Tradesman HVAC technician at work"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  priority
-                  style={{ objectFit: "cover", objectPosition: "50% 50%" }}
-                />
-              </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-[#141414] border-2 border-white/10 shadow-[8px_8px_0_0_rgba(201,168,76,0.15)]">
+              <Image
+                src="/images/download (1).png"
+                alt="DJ & Dior Tradesman HVAC technician at work"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover object-center"
+              />
             </div>
             {/* Floating Badge */}
             <motion.div

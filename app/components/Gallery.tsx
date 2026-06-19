@@ -1,26 +1,95 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import SectionHeading from "./ui/SectionHeading";
 
-const galleryItems = [
-  { src: "/images/download (2).png", label: "AC Unit Installation" },
-  { src: "/images/download (3).png", label: "Furnace Replacement" },
-  { src: "/images/download (7).png", label: "Ductwork & Ventilation" },
-  { src: "/images/download (5).png", label: "Commercial HVAC Setup" },
-  { src: "/images/download (6).png", label: "Residential HVAC System" },
-  { src: "/images/download (4).png", label: "HVAC Maintenance" },
+const GALLERY_ITEMS = [
+  {
+    title: "AC Unit Installation",
+    category: "HVAC",
+    image: "/images/download (2).png",
+    alt: "Professional AC unit installation for a residential home in Marlton, NJ",
+  },
+  {
+    title: "Furnace Replacement",
+    category: "Heating",
+    image: "/images/download (3).png",
+    alt: "Furnace replacement and heating system upgrade in South Jersey",
+  },
+  {
+    title: "Ductwork & Ventilation",
+    category: "HVAC",
+    image: "/images/download (7).png",
+    alt: "Custom ductwork fabrication and ventilation service for improved airflow",
+  },
+  {
+    title: "Commercial HVAC Setup",
+    category: "Commercial",
+    image: "/images/download (5).png",
+    alt: "Full commercial HVAC system installation at a business property",
+  },
+  {
+    title: "Residential HVAC System",
+    category: "Residential",
+    image: "/images/download (6).png",
+    alt: "Complete residential HVAC installation with indoor and outdoor units",
+  },
+  {
+    title: "HVAC Maintenance",
+    category: "Service",
+    image: "/images/download (4).png",
+    alt: "Preventive HVAC maintenance and system tune-up service",
+  },
 ];
 
+function GalleryCard({
+  title,
+  category,
+  image,
+  alt,
+}: {
+  title: string;
+  category: string;
+  image: string;
+  alt: string;
+}) {
+  return (
+    <div className="flex-shrink-0 w-64 sm:w-72 lg:w-80 rounded-xl overflow-hidden relative group cursor-pointer">
+      {/* Image container — portrait aspect ratio */}
+      <div className="relative aspect-[3/4] w-full">
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 320px"
+          className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 sm:p-6">
+        <span className="text-xs font-semibold uppercase tracking-wider mb-1 text-[var(--accent)]">
+          {category}
+        </span>
+        <h3
+          className="text-white font-bold text-base sm:text-lg leading-tight"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          {title}
+        </h3>
+      </div>
+
+      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-[var(--accent)]/0 group-hover:bg-[var(--accent)]/10 transition-colors duration-300 pointer-events-none" />
+    </div>
+  );
+}
+
 export default function Gallery() {
-  const looped = [...galleryItems, ...galleryItems];
+  const doubled = [...GALLERY_ITEMS, ...GALLERY_ITEMS];
 
   return (
-    <section
-      id="gallery"
-      className="section-padding bg-[#0a0a0a] overflow-hidden"
-    >
+    <section id="gallery" className="section-padding bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           eyebrow="Our Work"
@@ -29,52 +98,81 @@ export default function Gallery() {
         />
       </div>
 
-      {/* Scrolling track — CSS animation, no JS needed */}
+      {/* Marquee */}
       <div className="relative">
-        <div
-          className="flex gap-5 animate-marquee"
-          style={{ width: "max-content" }}
-        >
-          {looped.map((item, index) => (
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 lg:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 lg:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+
+        {/* Two marquee rows */}
+        <div className="flex flex-col gap-4">
+          {/* Row 1 — left to right */}
+          <div>
             <div
-              key={index}
-              className="flex-shrink-0 w-[75vw] sm:w-[55vw] md:w-[40vw] lg:w-[28vw]"
+              className="marquee-track"
+              style={{ "--marquee-duration": "50s" } as React.CSSProperties}
             >
-              <div className="relative border-2 border-white/10 hover:border-[var(--accent)] bg-[#141414] group overflow-hidden transition-colors duration-500">
-                <div className="relative w-full aspect-[2/1] overflow-hidden">
-                  <Image
-                    src={item.src}
-                    alt={item.label}
-                    fill
-                    sizes="(min-width: 1024px) 28vw, (min-width: 768px) 40vw, (min-width: 640px) 55vw, 75vw"
-                    style={{ objectFit: "cover", objectPosition: "50% 50%" }}
-                    className="transition-transform duration-700 group-hover:scale-105"
-                    draggable={false}
+              <div className="marquee-content gap-4 px-2">
+                {doubled.map((item, i) => (
+                  <GalleryCard
+                    key={`r1-${i}`}
+                    title={item.title}
+                    category={item.category}
+                    image={item.image}
+                    alt={item.alt}
                   />
-                </div>
-                {/* Label overlay */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-5 pt-14">
-                  <span
-                    className="text-white font-black uppercase text-sm sm:text-base tracking-wider"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {item.label}
-                  </span>
-                </div>
+                ))}
+              </div>
+              <div className="marquee-content gap-4 px-2" aria-hidden="true">
+                {doubled.map((item, i) => (
+                  <GalleryCard
+                    key={`r1-dup-${i}`}
+                    title={item.title}
+                    category={item.category}
+                    image={item.image}
+                    alt={item.alt}
+                  />
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* Hint */}
-      <div className="text-center mt-8">
-        <span
-          className="text-white/20 text-xs font-medium uppercase tracking-[0.3em]"
-          style={{ fontFamily: "var(--font-body)" }}
-        >
-          Auto-scrolling · Hover to pause
-        </span>
+          {/* Row 2 — right to left */}
+          <div>
+            <div
+              className="marquee-track"
+              style={
+                {
+                  "--marquee-duration": "45s",
+                  animationDirection: "reverse",
+                } as React.CSSProperties
+              }
+            >
+              <div className="marquee-content gap-4 px-2">
+                {[...doubled].reverse().map((item, i) => (
+                  <GalleryCard
+                    key={`r2-${i}`}
+                    title={item.title}
+                    category={item.category}
+                    image={item.image}
+                    alt={item.alt}
+                  />
+                ))}
+              </div>
+              <div className="marquee-content gap-4 px-2" aria-hidden="true">
+                {[...doubled].reverse().map((item, i) => (
+                  <GalleryCard
+                    key={`r2-dup-${i}`}
+                    title={item.title}
+                    category={item.category}
+                    image={item.image}
+                    alt={item.alt}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
